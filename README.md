@@ -11,6 +11,4 @@
 
 ## GitHub Pages
 
-網站由 `.github/workflows/pages.yml` 部署。將更新推送至 `main` 後，GitHub Actions 會發布網站。
-
-第一次部署前，請在 repository 的 **Settings → Pages → Build and deployment** 將 **Source** 設為 **GitHub Actions**。
+網站由 `.github/workflows/pages.yml` 部署。將更新推送至 `main` 後，GitHub Actions 會在首次部署時啟用 Pages，並發布網站。
