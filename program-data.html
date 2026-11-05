@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-4 課程：了解程式指令與資料如何一起工作，輸入、輸出和記憶體的角色，以及程式為何也能作為資料處理。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-4 程式與資料｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-4 程式與資料</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-4</p>
+        <h1 class="lesson-title">程式與資料</h1>
+        <p class="lesson-subtitle">Programs &amp; Data</p>
+        <p class="lesson-lead">認識程式指令與資料的分工，追蹤輸入如何經過程式處理成輸出，並了解程式本身也可以作為資料保存與處理。</p>
+      </header>
+
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list">
+          <li>分辨程式中的指令和程式要處理的資料。</li>
+          <li>說明輸入如何經過程式處理後成為輸出。</li>
+          <li>用例子說明程式在執行時是指令，也可以被其他程式當作資料讀取。</li>
+        </ul>
+      </section>
+
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="data-definition">
+          <p class="lesson-section-number">01 / 資料</p>
+          <h2 id="data-definition">電腦需要處理的內容是資料</h2>
+          <p><strong>資料（data）</strong>是程式可以讀取、保存或運算的內容，例如數字、文字、圖片檔案，或表單中輸入的姓名。資料本身不會告訴 CPU 要進行什麼操作；程式會決定如何使用它。</p>
+          <p>例如，數字 8 可以是購物數量、溫度或運算中的一個值。電腦只處理資料所代表的內容，資料的用途要由程式和使用情境決定。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="instruction-definition">
+          <p class="lesson-section-number">02 / 指令</p>
+          <h2 id="instruction-definition">指令描述要執行的操作</h2>
+          <p><strong>指令（instruction）</strong>是要求電腦執行一項操作的描述，例如「相加」、「比較」或「把結果保存」。CPU 執行指令，資料則是指令可能讀取或修改的內容。</p>
+          <p>如果指令要求「把輸入的數字加 3」，指令說明操作，輸入的數字是資料。完成後產生的新數字也是資料。</p>
+          <div class="equation-flow" aria-label="程式指令說明操作，資料是 CPU 處理的內容">
+            <span>Program <small>一組操作指令</small></span><b aria-hidden="true">→</b>
+            <span>CPU <small>執行指令</small></span><b aria-hidden="true">←</b>
+            <span>Data <small>指令處理的內容</small></span>
+          </div>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="program-definition">
+          <p class="lesson-section-number">03 / 程式</p>
+          <h2 id="program-definition">程式把操作排成可執行的步驟</h2>
+          <p><strong>程式（program）</strong>是一組有順序的操作指令，告訴電腦要做什麼。計算程式可以先讀取數字，再依指定方式運算，最後提供結果。</p>
+          <p>CPU 依照程式指令工作，資料則是程式要處理的內容。因此，同一個資料值可以交給不同程式或不同指令處理，產生不同結果。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="input-output">
+          <p class="lesson-section-number">04 / 輸入與輸出</p>
+          <h2 id="input-output">資料如何從輸入變成輸出？</h2>
+          <p><strong>輸入（input）</strong>是程式收到的資料，例如使用者輸入的數字。<strong>輸出（output）</strong>是程式處理後提供的結果，例如螢幕顯示的答案或保存的檔案。</p>
+          <p><strong>處理（processing）</strong>是程式依照指令讀取或改變資料的工作。整個流程可以簡化為：</p>
+          <div class="concept-flow concept-flow-four-step" role="img" aria-label="輸入資料，程式依照指令處理，再產生輸出">
+            <div class="concept-flow-step"><span>INPUT</span><strong>輸入</strong><small>數字 8</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>PROGRAM</span><strong>程式</strong><small>加上 3 的指令</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>PROCESSING</span><strong>處理</strong><small>CPU 執行加法</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>OUTPUT</span><strong>輸出</strong><small>結果 11</small></div>
+          </div>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="memory-definition">
+          <p class="lesson-section-number">05 / 記憶體</p>
+          <h2 id="memory-definition">執行中的程式和資料會放進記憶體</h2>
+          <p><strong>記憶體（memory）</strong>是在程式執行期間暫時存放指令和資料的空間。程式載入並開始執行時，它的指令和目前處理的資料會放在記憶體中，讓 CPU 能取用。</p>
+          <p>例如使用者輸入 8 之後，程式指令「加上 3」和輸入值都會供執行中的程式使用。CPU 依照指令處理輸入資料，程式再使用計算結果。RAM 是這類執行期間記憶體的常見例子。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="program-is-data">
+          <p class="lesson-section-number">06 / 程式也能是資料</p>
+          <h2 id="program-is-data">同一個程式，會依情境扮演不同角色</h2>
+          <p>程式執行時，它提供 CPU 要執行的指令。但在執行之前，程式通常以檔案形式保存在 SSD 或 HDD 中。這個檔案由位元組組成，可以被複製、保存，也可以被其他程式讀取；在這些情況下，程式檔案就是其他程式處理的<strong>資料</strong>。</p>
+          <p>例如文字編輯器可以讀取程式碼檔案並顯示文字。對文字編輯器來說，檔案是它要讀取和顯示的資料；當電腦載入並執行另一個程式時，其中的操作描述則會由 CPU 當作指令執行。</p>
+          <p>所以「程式」和「資料」不是永遠固定的兩種檔案。要看目前是哪個程式在處理它，以及它在這個情境中的用途。</p>
+          <aside class="lesson-note"><strong>兩種情境</strong><p>程式正在執行：它的指令讓 CPU 知道要做什麼。程式檔案正被複製或由編輯器讀取：檔案內容是另一個程式要處理的資料。</p></aside>
+        </section>
+      </article>
+
+      <section class="lesson-section" aria-labelledby="program-demo-title">
+        <p class="lesson-section-number">07 / 互動示意</p>
+        <h2 id="program-demo-title">讓程式處理輸入資料</h2>
+        <p>輸入數字並選擇程式提供的操作，再觀察程式、資料和輸出各自的位置。</p>
+        <div class="program-demo" data-program-demo>
+          <div><h3>輸入 → 程式 → 處理 → 輸出</h3><p class="program-demo-intro">這個小程式會依照你選擇的操作處理輸入值。</p></div>
+          <form data-program-form>
+            <div class="program-input-row">
+              <label class="program-input-field">Input：輸入一個數字
+                <input type="number" data-program-input min="-1000000" max="1000000" step="1" value="8" required aria-label="輸入要交給程式處理的數字" />
+              </label>
+              <label class="program-input-field">Program：選擇指令
+                <select data-program-operation aria-label="選擇程式要執行的操作">
+                  <option value="add-three">加上 3</option>
+                  <option value="double">乘以 2</option>
+                </select>
+              </label>
+              <button class="button button-primary demo-run" type="submit">執行程式 <span class="button-arrow" aria-hidden="true">→</span></button>
+            </div>
+          </form>
+          <div class="program-output">
+            <div class="program-output-panel"><span>OUTPUT</span><output data-program-output aria-live="polite">—</output></div>
+            <div class="program-output-panel"><span>執行說明</span><p data-program-details role="status" aria-live="polite">執行後會顯示程式如何處理輸入值。</p></div>
+          </div>
+          <button class="program-data-toggle" type="button" data-program-data-toggle aria-expanded="false" aria-controls="program-data-note">查看「程式也是資料」的例子</button>
+          <p class="program-data-note" id="program-data-note" data-program-data-note hidden>這個小程式本身也會以檔案形式保存。瀏覽器讀取頁面中的程式碼時，會把程式碼當作資料讀取；程式碼執行時，CPU 則依照其中的指令工作。同一份程式內容，會因處理它的程式和當下情境而扮演不同角色。</p>
+        </div>
+      </section>
+
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title">
+        <p class="lesson-section-number">08 / 自我檢查</p><h2 id="quiz-title">小測驗</h2><p class="quiz-instructions">選擇答案後會立即顯示結果與說明。</p>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="程式的指令描述要執行的操作；數字 8 是程式要處理的資料。" data-incorrect-explanation="分辨操作和操作對象：「加上 3」描述要做什麼，數字 8 是要處理的資料。"><fieldset><legend>1. 程式要「把輸入的數字加 3」。哪個是程式指令要處理的資料？</legend><label><input type="radio" name="program-quiz-1" value="a" /> 「加上 3」這項操作</label><label><input type="radio" name="program-quiz-1" value="b" /> 使用者輸入的數字</label><label><input type="radio" name="program-quiz-1" value="c" /> 螢幕本身</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="輸入資料由程式依照指令處理，處理結果才成為輸出。" data-incorrect-explanation="一般流程是先收到輸入，再依照程式指令處理資料，最後提供輸出。"><fieldset><legend>2. 一個程式收到數字、依規則計算並顯示答案。哪個流程正確？</legend><label><input type="radio" name="program-quiz-2" value="a" /> Input → Program 處理 → Output</label><label><input type="radio" name="program-quiz-2" value="b" /> Output → Input → Program</label><label><input type="radio" name="program-quiz-2" value="c" /> Program 和資料不需要互相配合</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="程式正在執行時，指令供 CPU 執行；另一個程式讀取程式檔案時，檔案內容是它處理的資料。" data-incorrect-explanation="程式檔案可被保存、複製或由其他程式讀取；執行時，其中的指令才供 CPU 執行。"><fieldset><legend>3. 哪個例子說明程式本身也可以是資料？</legend><label><input type="radio" name="program-quiz-3" value="a" /> CPU 正在執行加法指令</label><label><input type="radio" name="program-quiz-3" value="b" /> 螢幕正在顯示數字</label><label><input type="radio" name="program-quiz-3" value="c" /> 文字編輯器讀取程式碼檔案並顯示文字</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="程式執行時，程式指令和目前處理的資料會暫存在記憶體，供 CPU 取用。" data-incorrect-explanation="CPU 需要從記憶體取用執行中的指令和資料；儲存裝置負責長期保存檔案。"><fieldset><legend>4. 計算程式正在執行時，CPU 需要的程式指令和輸入資料通常放在哪裡？</legend><label><input type="radio" name="program-quiz-4" value="a" /> 只放在螢幕</label><label><input type="radio" name="program-quiz-4" value="b" /> 記憶體</label><label><input type="radio" name="program-quiz-4" value="c" /> 只放在鍵盤</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+      </section>
+
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">09 / 與資安的關係</p><h2 id="security-title">程式需要分辨指令和輸入資料</h2>
+        <p>使用者輸入通常是不受程式控制的內容，稱為<strong>不可信任輸入（untrusted input）</strong>。程式應該檢查輸入是否符合預期，這類檢查稱為<strong>輸入驗證（input validation）</strong>。</p>
+        <p>如果程式把本來應該當作資料的內容錯誤地解讀成操作指令，就可能出現<strong>注入（injection）</strong>類問題。這裡先建立「程式必須正確區分程式指令和資料」的概念，後續 Web Security 才會說明具體漏洞與防護。</p>
+      </section>
+
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2><p>程式提供 CPU 操作步驟，資料是程式要處理的內容。輸入經過程式處理後形成輸出；程式檔案也能被其他程式當作資料讀取。</p>
+        <h3>下一步</h3><p>0-5 會介紹程式開始執行後，作業系統如何管理正在執行的程式，也就是 Process 的概念。</p>
+      </section>
+
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="memory-storage.html">← 0-3 記憶體與儲存裝置</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="program-process.html">0-5 程式與 Process <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>

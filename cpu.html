@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-2 課程：認識 CPU 如何讀取指令、處理資料，以及它和 RAM、程式與資訊安全的關係。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-2 CPU 在做什麼？｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span>
+          <span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽">
+          <a class="nav-link" href="index.html">首頁</a>
+          <a class="nav-link active" href="roadmap.html">學習路線</a>
+          <a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽">
+        <a href="index.html">首頁</a><span aria-hidden="true">/</span>
+        <a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span>
+        <a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span>
+        <span aria-current="page">0-2 CPU 在做什麼？</span>
+      </nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-2</p>
+        <h1 class="lesson-title">CPU 在做什麼？</h1>
+        <p class="lesson-subtitle">Central Processing Unit</p>
+        <p class="lesson-lead">了解處理器如何讀取程式指令、使用資料並產生結果。本課只介紹基本執行流程，不討論處理器內部的進階設計。</p>
+      </header>
+
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list">
+          <li>解釋 CPU 在電腦中的工作，以及 CPU 不是整台電腦。</li>
+          <li>說明指令如何指定一項操作，程式如何由多個指令組成。</li>
+          <li>描述 CPU 如何使用記憶體中的指令和資料完成運算。</li>
+        </ul>
+      </section>
+
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="why-cpu">
+          <p class="lesson-section-number">01 / 為什麼需要 CPU</p>
+          <h2 id="why-cpu">電腦需要一個部件執行操作</h2>
+          <p>在 0-1 我們看到，電腦會接收輸入、處理資料，再提供輸出。要計算數字或比較兩個值，必須有部件依照明確步驟執行這些操作。負責這項工作的主要部件叫<strong>中央處理器（CPU，Central Processing Unit）</strong>，中文也常簡稱處理器。</p>
+          <p>CPU 不是整台電腦。記憶體負責暫時存放執行中會用到的內容，儲存裝置保存程式與檔案，其他裝置則負責輸入和輸出。CPU 會和這些部件協作。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="instructions">
+          <p class="lesson-section-number">02 / 指令</p>
+          <h2 id="instructions">指令是什麼？</h2>
+          <p><strong>指令（instruction）</strong>是要求電腦執行一項操作的描述，例如「把兩個數字相加」或「比較兩個值是否相同」。指令讓程式能把工作拆成電腦可執行的步驟。</p>
+          <p><strong>程式（program）</strong>由一系列有順序的指令組成。開啟計算程式時，它可能依序讀取輸入、執行加法，再把結果交給螢幕顯示。CPU 讀取這些指令並執行它們。</p>
+          <aside class="lesson-note"><strong>本課範圍</strong><p>此處的「讀取、理解、執行」是基本概念說明。處理器內部如何安排與加速這些工作，屬於之後的電腦架構課程。</p></aside>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="execute">
+          <p class="lesson-section-number">03 / 執行流程</p>
+          <h2 id="execute">CPU 如何執行指令？</h2>
+          <p>執行程式時，CPU 會取得目前要執行的指令，以及該指令需要的資料。接著依照指令指定的操作處理資料，並保存或傳出結果。這些動作會隨著程式的步驟持續進行。</p>
+          <p>例如程式要計算 2 + 3：指令指定「相加」，資料是數字 2 和 3；CPU 執行加法，得到結果 5。這張圖把它簡化成四步：</p>
+          <div class="concept-flow concept-flow-four-step" role="img" aria-label="取得指令，CPU 使用資料執行指令，最後產生結果">
+            <div class="concept-flow-step"><span>INSTRUCTION</span><strong>指令</strong><small>執行加法</small></div>
+            <span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>CPU</span><strong>處理器</strong><small>執行操作</small></div>
+            <span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>DATA</span><strong>資料</strong><small>2 和 3</small></div>
+            <span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>RESULT</span><strong>結果</strong><small>5</small></div>
+          </div>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="cpu-data">
+          <p class="lesson-section-number">04 / CPU 與資料</p>
+          <h2 id="cpu-data">指令說明操作，資料是操作對象</h2>
+          <p>CPU 不會憑空知道要算什麼。指令說明要做的操作，資料則提供這項操作所需的內容。對「2 + 3」而言，加法是指令要執行的操作，2 和 3 是資料，5 是運算結果。</p>
+          <p>同一份資料可以依照不同指令產生不同結果。例如對 2 和 3 執行加法會得到 5；執行比較則會得到「2 小於 3」的判斷結果。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="cpu-ram">
+          <p class="lesson-section-number">05 / CPU 與 RAM</p>
+          <h2 id="cpu-ram">CPU 從哪裡取得指令和資料？</h2>
+          <p>執行中的程式和目前使用的資料會放在<strong>記憶體（Memory）</strong>中；一般電腦主要使用<strong>隨機存取記憶體（RAM，Random Access Memory）</strong>作為暫存空間。CPU 從 RAM 取得執行所需的指令和資料，再把結果交回去或送往其他部件。</p>
+          <p>RAM 和 CPU 分工不同：RAM 保存目前工作需要的內容，CPU 執行指令。程式檔案通常先從 SSD 或 HDD 載入 RAM，細節會在 0-3 說明。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="example">
+          <p class="lesson-section-number">06 / 完整例子</p>
+          <h2 id="example">計算程式執行時發生什麼？</h2>
+          <p>你在計算程式輸入 2 + 3。輸入的數字成為資料，計算程式提供「相加」等指令。程式和輸入資料在執行時由 RAM 暫存，CPU 取得指令與資料並執行加法，最後產生 5，計算程式再將結果顯示出來。</p>
+          <p>這裡的 2、3、加法指令和結果 5 是不同內容。CPU 負責執行指令，不負責永久保存程式或顯示畫面。</p>
+        </section>
+      </article>
+
+      <section class="lesson-section" aria-labelledby="cpu-demo-title">
+        <p class="lesson-section-number">07 / 互動示意</p>
+        <h2 id="cpu-demo-title">指令如何變成結果？</h2>
+        <p>按下執行後，依序查看 CPU 如何使用指令和資料完成「2 + 3」。</p>
+        <div class="computer-demo" data-flow-demo>
+          <div class="computer-demo-heading">
+            <div><h3>執行「2 + 3」</h3><p>查看每一步的角色。</p></div>
+            <button class="button button-primary demo-run" type="button" data-flow-run aria-controls="cpu-flow">
+              執行指令 <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+          <ol class="computer-flow" id="cpu-flow" aria-label="指令、CPU、資料與運算結果">
+            <li class="computer-flow-step" data-flow-step data-flow-label="指令：要求 CPU 將兩個值相加。"><span class="flow-step-index">01</span><strong>Instruction</strong><span>加法指令</span><small>告訴 CPU 要執行什麼操作</small></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li class="computer-flow-step" data-flow-step data-flow-label="CPU：取得指令，準備執行加法。"><span class="flow-step-index">02</span><strong>CPU</strong><span>中央處理器</span><small>依照指令執行操作</small></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li class="computer-flow-step" data-flow-step data-flow-label="資料：CPU 使用數字 2 和 3 作為加法的輸入。"><span class="flow-step-index">03</span><strong>Data</strong><span>2 和 3</span><small>這次運算要處理的資料</small></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li class="computer-flow-step" data-flow-step data-flow-label="結果：加法完成，得到 5。"><span class="flow-step-index">04</span><strong>Result</strong><span>5</span><small>程式可以再顯示或保存結果</small></li>
+          </ol>
+          <p class="demo-status" data-flow-status role="status" aria-live="polite">按下「執行指令」查看流程。</p>
+        </div>
+      </section>
+
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title">
+        <p class="lesson-section-number">08 / 自我檢查</p>
+        <h2 id="quiz-title">小測驗</h2>
+        <p class="quiz-instructions">選擇答案後會立即顯示結果與說明。</p>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="CPU 是執行程式指令、處理資料的主要部件；它不是整台電腦。" data-incorrect-explanation="CPU 執行指令，但電腦還需要 RAM、儲存裝置和輸入輸出設備。">
+          <fieldset><legend>1. 計算程式讀到「2 + 3」後，哪個部件會執行加法操作？</legend>
+            <label><input type="radio" name="cpu-quiz-1" value="a" /> SSD，因為它保存程式</label>
+            <label><input type="radio" name="cpu-quiz-1" value="b" /> CPU，因為它依照指令處理資料</label>
+            <label><input type="radio" name="cpu-quiz-1" value="c" /> 螢幕，因為它顯示答案</label>
+          </fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p>
+        </div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="指令指定加法這項操作，2 和 3 則是 CPU 要處理的資料。" data-incorrect-explanation="指令描述操作，資料是操作的對象；兩者在程式執行時各有用途。">
+          <fieldset><legend>2. 在「把 2 和 3 相加」這個例子中，哪一項是資料？</legend>
+            <label><input type="radio" name="cpu-quiz-2" value="a" /> 數字 2 和 3</label>
+            <label><input type="radio" name="cpu-quiz-2" value="b" /> 「執行加法」這個操作</label>
+            <label><input type="radio" name="cpu-quiz-2" value="c" /> CPU 本身</label>
+          </fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p>
+        </div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="程式執行時，CPU 會從 RAM 取得需要的指令和資料。" data-incorrect-explanation="SSD 和 HDD 用來長期保存程式；CPU 執行時會使用 RAM 中的指令和資料。">
+          <fieldset><legend>3. 計算程式正在執行時，CPU 通常從哪裡取得目前要用的指令和資料？</legend>
+            <label><input type="radio" name="cpu-quiz-3" value="a" /> 永遠直接從螢幕取得</label>
+            <label><input type="radio" name="cpu-quiz-3" value="b" /> 只從鍵盤取得</label>
+            <label><input type="radio" name="cpu-quiz-3" value="c" /> 從 RAM 取得</label>
+          </fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">09 / 與資安的關係</p>
+        <h2 id="security-title">指令的執行範圍需要受到限制</h2>
+        <p>CPU 會執行程式要求的指令。若程式可以任意讀取檔案或操作系統資源，出錯或遭濫用時就可能影響其他資料和程式。</p>
+        <p>作業系統會管理程式的執行環境與資源存取。這會連到<strong>權限（privilege，程式可進行的操作範圍）</strong>和<strong>系統呼叫（system call，程式向作業系統請求服務的方式）</strong>。後續課程會再說明這些機制如何限制程式，不在本課展開攻擊技巧。</p>
+      </section>
+
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2>
+        <p>CPU 依照程式中的指令處理資料；程式執行時，CPU 會使用 RAM 中的指令和資料。CPU 是電腦的一個部件，不是整台電腦。</p>
+        <h3>下一步</h3>
+        <p>0-3 會說明程式和資料如何從儲存裝置載入 RAM，以及 RAM 和 SSD、HDD 的用途差異。</p>
+      </section>
+
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="computer.html">← 0-1 什麼是電腦？</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="memory-storage.html">0-3 記憶體與儲存裝置 <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner">
+      <a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span>
+    </div></footer>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-10 Level 0 Review：透過系統流程和情境題回顧電腦、程式、作業系統、檔案與權限。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-10 Level 0 Review｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+    <main class="lesson-page section-shell review-page" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-10 Level 0 Review</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> FINAL REVIEW</p>
+        <h1 class="lesson-title">Level 0 Review</h1>
+        <p class="lesson-subtitle">Computer Fundamentals Review</p>
+        <p class="lesson-lead">用整體流程和實際情境檢查你是否能連結電腦、程式、作業系統、檔案與權限等基本概念。</p>
+      </header>
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">完成這一頁後，你可以</h2>
+        <ul class="objective-list"><li>描述程式從儲存裝置載入、進入記憶體並由 CPU 執行的大致關係。</li><li>說明作業系統、檔案系統、使用者和權限如何共同影響檔案存取。</li><li>解釋 Terminal 命令如何要求作業系統操作資源。</li></ul>
+      </section>
+      <section class="lesson-section" aria-labelledby="review-order-title">
+        <p class="lesson-section-number">01 / 學習順序</p>
+        <h2 id="review-order-title">Level 0 的概念順序</h2>
+        <p>以下順序表示本 Level 的教學安排，讓概念逐步建立。它不是電腦實際運作時唯一的先後關係；系統中的元件會依工作互相配合。</p>
+        <ol class="review-sequence" aria-label="Level 0 概念學習順序">
+          <li>Computer <span>電腦</span></li>
+          <li>Data <span>資料</span></li>
+          <li>Program <span>程式</span></li>
+          <li>CPU <span>執行指令</span></li>
+          <li>Memory / Storage <span>暫存與保存</span></li>
+          <li>Process <span>一次執行活動</span></li>
+          <li>File System <span>檔案與路徑</span></li>
+          <li>User / Permission <span>身分與操作範圍</span></li>
+          <li>Terminal <span>文字操作介面</span></li>
+          <li>Operating System <span>資源管理</span></li>
+        </ol>
+      </section>
+      <section class="lesson-section" aria-labelledby="scenarios-title">
+        <p class="lesson-section-number">02 / 系統情境</p>
+        <h2 id="scenarios-title">把概念放進同一個情境</h2>
+        <div class="review-scenarios">
+          <article class="review-scenario">
+            <h3>A. 使用者開啟一個程式</h3>
+            <p>Program 檔案通常保存在 Storage。作業系統將執行所需內容載入 RAM，建立一次 Process 執行活動；CPU 執行其中的指令。作業系統會管理這次活動和所需資源。</p>
+          </article>
+          <article class="review-scenario">
+            <h3>B. 程式讀取 <code>project/data.txt</code></h3>
+            <p>假設目前位置是 project 資料夾的上一層，這是從目前位置出發的相對路徑。File System 根據資料夾結構定位檔案；Process 發出讀取要求時，作業系統還會依照目前 User 和檔案 Permission 判斷是否允許。</p>
+          </article>
+          <article class="review-scenario">
+            <h3>C. Alice 可以讀取檔案，Bob 不可以</h3>
+            <p>作業系統辨認啟動 Process 的使用者身分，並檢查檔案權限。不同 User 的 Process 可能因此得到不同的存取結果；知道檔名並不代表一定有權讀取。</p>
+          </article>
+          <article class="review-scenario">
+            <h3>D. 使用者在 Terminal 輸入命令</h3>
+            <p>Terminal 提供文字介面；Shell 解析命令並要求作業系統操作資源。作業系統依目前使用者與權限，處理相關 Process 或 File 操作，再將結果回傳給介面顯示。</p>
+          </article>
+          <article class="review-scenario">
+            <h3>E. 同一個程式開啟兩次</h3>
+            <p>Program 檔案可以只有一份；每次開啟都可能建立新的 Process。每個 Process 是一次執行活動，可能使用不同的輸入資料。</p>
+          </article>
+          <article class="review-scenario">
+            <h3>F. 程式取得鍵盤輸入並顯示結果</h3>
+            <p>作業系統協調輸入設備和螢幕等輸出設備。程式處理輸入資料，再把結果交給系統顯示；執行所需的指令和資料會由 CPU 與記憶體共同使用。</p>
+          </article>
+        </div>
+      </section>
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title" data-confirm-quiz>
+        <p class="lesson-section-number">03 / 最終測驗</p><h2 id="quiz-title">Level 0 檢查</h2><p class="quiz-instructions">共 8 題。每題選擇答案後按「確認答案」查看解析；尚未選擇時不會判定。</p>
+        <p class="quiz-score" data-quiz-score aria-live="polite">Level 0 Review 得分：0 / 8</p>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="25 是程式要處理的數值，因此是 Data。Program 會包含執行規則或指令，例如將輸入值乘以 4。"><fieldset><legend>1. 計算程式收到使用者輸入的 25，並計算 25 × 4。在這個情境中，25 比較接近什麼？</legend><label><input type="radio" name="review-quiz-1" value="a" data-option-explanation="Program 包含執行規則或指令，例如乘以 4；25 是這個規則處理的值。" /> Program 的運算規則</label><label><input type="radio" name="review-quiz-1" value="b" /> Data（資料）</label><label><input type="radio" name="review-quiz-1" value="c" data-option-explanation="CPU 是執行指令的部件；25 是輸入給程式處理的數值，不是 CPU。" /> CPU</label><label><input type="radio" name="review-quiz-1" value="d" data-option-explanation="25 是運算要使用的數值，不是用來長期保存程式和檔案的 Storage。" /> Storage</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-1">確認答案</button><p class="quiz-feedback" id="review-feedback-1" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="程式正在執行時，所需指令和資料通常先載入 RAM，CPU 再從記憶體取得內容。Storage 負責長期保存程式和檔案。"><fieldset><legend>2. 程式正在執行，CPU 需要取得它正在使用的指令與資料。哪個位置最直接提供目前執行所需的內容？</legend><label><input type="radio" name="review-quiz-2" value="a" /> RAM</label><label><input type="radio" name="review-quiz-2" value="b" data-option-explanation="Storage 可長期保存程式，但執行時通常會先將需要的內容載入 RAM，再由 CPU 取用。" /> 只從 Storage 直接取得所有執行內容</label><label><input type="radio" name="review-quiz-2" value="c" data-option-explanation="CPU 執行指令，但它不是用來保存程式和資料的記憶體。" /> CPU 外殼</label><label><input type="radio" name="review-quiz-2" value="d" data-option-explanation="螢幕呈現輸出，不負責提供 CPU 執行所需的指令和資料。" /> 螢幕</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-2">確認答案</button><p class="quiz-feedback" id="review-feedback-2" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="Program 是可執行的程式內容；每次實際執行都是一個 Process。同一個 Program 可以同時對應多個 Process。"><fieldset><legend>3. 使用者開啟同一個程式兩次，哪個敘述最合理？</legend><label><input type="radio" name="review-quiz-3" value="a" data-option-explanation="同時開啟多次不代表需要多顆 CPU；CPU 是電腦的處理器，Process 是一次程式執行活動。" /> 每次開啟都需要一顆新的 CPU</label><label><input type="radio" name="review-quiz-3" value="b" data-option-explanation="Program 檔案可以保留並多次執行；開啟第二次不會取代或刪除第一個執行活動。" /> 第二次執行會取代原本的 Program</label><label><input type="radio" name="review-quiz-3" value="c" /> 同一個 Program 可以對應到多個 Process</label><label><input type="radio" name="review-quiz-3" value="d" data-option-explanation="Process 代表執行中的程式活動；若程式沒有執行，就沒有這次執行所代表的 Process。" /> 只要 Program 存在，就一定有 Process</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-3">確認答案</button><p class="quiz-feedback" id="review-feedback-3" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="/home/alice/project/data.txt 從根目錄開始描述位置，是檔案的絕對路徑。路徑讓檔案系統能定位資料。"><fieldset><legend>4. <code>/home/alice/project/data.txt</code> 在這個情境中最主要表示什麼？</legend><label><input type="radio" name="review-quiz-4" value="a" data-option-explanation="這串文字是位置描述，不是使用者帳號，也不表示誰能讀取檔案。" /> 一個 User 名稱</label><label><input type="radio" name="review-quiz-4" value="b" /> 一個檔案的絕對路徑</label><label><input type="radio" name="review-quiz-4" value="c" data-option-explanation="Process 是正在執行的程式活動；此字串則描述檔案系統中的位置。" /> 一個 Process 名稱</label><label><input type="radio" name="review-quiz-4" value="d" data-option-explanation="路徑描述檔案位置，不是對檔案可以進行的操作權限。" /> 一種 Permission</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-4">確認答案</button><p class="quiz-feedback" id="review-feedback-4" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="Read 允許查看檔案內容；Write 控制能否修改。兩者是不同操作權限，可以分開設定。"><fieldset><legend>5. User A 可以讀取 secret.txt，但不能修改它。哪種權限組合最符合？</legend><label><input type="radio" name="review-quiz-5" value="a" /> Read ✓，Write ✗</label><label><input type="radio" name="review-quiz-5" value="b" data-option-explanation="Write 允許修改內容；題目說 User A 不能修改，因此不能有 Write 權限。" /> Read ✗，Write ✓</label><label><input type="radio" name="review-quiz-5" value="c" data-option-explanation="題目明確說 User A 可以讀取，因此 Read 不能是 ✗；是否能 Execute 與這裡的讀取、修改判斷不同。" /> Read ✗，Write ✗，Execute ✓</label><label><input type="radio" name="review-quiz-5" value="d" data-option-explanation="題目只說能讀取但不能修改；允許 Read 和 Write 會讓修改操作也被允許。" /> Read ✓，Write ✓</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-5">確認答案</button><p class="quiz-feedback" id="review-feedback-5" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="d" data-correct-explanation="cd project 要求 Shell 切換目前資料夾；相對於目前位置找資料夾，連到 File System 和 Path 的概念。"><fieldset><legend>6. 使用者在 Terminal 輸入 <code>cd project</code>，這個命令最直接涉及哪個概念？</legend><label><input type="radio" name="review-quiz-6" value="a" data-option-explanation="cd 不會把目前位置改成 CPU 或更換硬體；它要求切換目前資料夾。" /> CPU 的指令執行速度</label><label><input type="radio" name="review-quiz-6" value="b" data-option-explanation="cd project 不會將程式載入 RAM；它要求切換目前所在資料夾。" /> Storage 長期保存程式</label><label><input type="radio" name="review-quiz-6" value="c" data-option-explanation="User 身分會影響權限，但 cd project 的直接作用是依資料夾位置切換目前路徑。" /> User 帳號名稱</label><label><input type="radio" name="review-quiz-6" value="d" /> 檔案系統中的路徑與目前位置</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-6">確認答案</button><p class="quiz-feedback" id="review-feedback-6" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="Operating System 管理和協調 CPU、RAM、Process、File、User 與 Permission 等系統資源和活動；它不是其中一個硬體元件。"><fieldset><legend>7. CPU、RAM、Process、File、User 和 Permission 需要共同管理時，哪個概念負責提供這個管理架構？</legend><label><input type="radio" name="review-quiz-7" value="a" data-option-explanation="CPU 是執行指令的硬體部件，不能單獨管理檔案、使用者和權限等所有資源。" /> CPU</label><label><input type="radio" name="review-quiz-7" value="b" /> Operating System</label><label><input type="radio" name="review-quiz-7" value="c" data-option-explanation="File System 管理檔案和路徑，但不負責協調 CPU、Process、User 和所有權限等整體資源。" /> File System</label><label><input type="radio" name="review-quiz-7" value="d" data-option-explanation="RAM 是執行期間存放指令和資料的記憶體，不是管理各種系統資源的軟體層。" /> RAM</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-7">確認答案</button><p class="quiz-feedback" id="review-feedback-7" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="Program 是程式內容，儲存在 Storage；執行時載入 RAM 並形成 Process。Process 代表 Alice 的一次執行活動，嘗試存取 File 時，作業系統會依 User 和 Permission 檢查。Alice 沒有讀取權限，所以這次操作被拒絕；OS 管理資源並執行此限制。這是概念關係，不表示所有內部操作都按單一固定順序執行。"><fieldset><legend>8. Alice 在 Terminal 中執行一個儲存在 Storage 的程式。程式載入 RAM 後形成 Process，並嘗試讀取 data.txt；Alice 沒有讀取權限。哪個部分最直接造成「無法讀取」？</legend><label><input type="radio" name="review-quiz-8" value="a" data-option-explanation="Terminal 提供文字介面，並不決定 Alice 能否讀取檔案；存取是否允許要看 Permission。" /> Terminal</label><label><input type="radio" name="review-quiz-8" value="b" data-option-explanation="RAM 暫存執行所需的指令和資料，但不決定使用者是否有權讀取 data.txt。" /> RAM</label><label><input type="radio" name="review-quiz-8" value="c" /> Permission</label><label><input type="radio" name="review-quiz-8" value="d" data-option-explanation="Process 是提出檔案讀取要求的執行活動；作業系統根據 User 的 Permission 判斷是否允許，而不是單由 Process 存在與否決定。" /> Process</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="review-feedback-8">確認答案</button><p class="quiz-feedback" id="review-feedback-8" role="status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">04 / 與資安的關係</p><h2 id="security-title">安全建立在資源管理之上</h2>
+        <p>程式處理資料、使用記憶體並讀寫檔案。作業系統依照使用者和權限管理這些操作；程式正確處理路徑和輸入，也能減少意外存取資料的風險。這些基本關係是後續學習資訊安全時會反覆用到的背景。</p>
+      </section>
+      <section class="lesson-section lesson-takeaways review-completion" aria-labelledby="completion-title">
+        <h2 id="completion-title">Level 0 完成後應理解的內容</h2>
+        <ul class="objective-list">
+          <li>資料與程式的基本差異。</li><li>CPU 如何執行指令。</li><li>RAM 與 Storage 的用途差異。</li><li>Program 與 Process 的差異。</li><li>File System 如何透過路徑定位資料。</li><li>User 與 Permission 如何影響操作。</li><li>Terminal 如何提供文字命令介面。</li><li>Operating System 為什麼存在，以及它管理哪些資源。</li>
+        </ul>
+        <h3>下一個 Level</h3>
+        <p>下一個 Level 是 Networking Fundamentals，從電腦如何交換資料開始，逐步介紹網路位址、封包與網站通訊。</p>
+      </section>
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="operating-system.html">← 0-9 作業系統</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一個 Level</span><a class="lesson-next-button" href="networking-fundamentals.html">Level 1 Networking Fundamentals →</a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>

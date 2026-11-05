@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="資安學習路線：從電腦與網路基礎開始，逐步學習程式、Web 與資訊安全。"
+    />
+    <meta name="theme-color" content="#0a111d" />
+    <title>學習路線｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" />
+              <path d="M13.25 17.75 16.5 21l6.75-7" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">資訊安全教育平台</span>
+            <span class="brand-subtitle">CYBERSECURITY EDUCATION</span>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="開啟導覽選單"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽">
+          <a class="nav-link" href="index.html">首頁</a>
+          <a class="nav-link active" href="roadmap.html" aria-current="page">學習路線</a>
+          <a class="nav-cta" href="#level-0">
+            從 Level 0 開始
+            <span aria-hidden="true">↓</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="roadmap section-shell" aria-labelledby="roadmap-title">
+        <div class="roadmap-heading">
+          <div>
+            <p class="section-kicker">LEARNING ROADMAP <span>—</span> 學習路線</p>
+            <h1 class="roadmap-page-title" id="roadmap-title">資安學習路線</h1>
+          </div>
+          <p class="roadmap-intro">
+            共十個階段，從電腦基礎開始，接著學習網路、Linux、程式、Web 與安全主題。
+          </p>
+        </div>
+
+        <div class="roadmap-summary" aria-label="學習路線摘要">
+          <span class="summary-marker" aria-hidden="true"></span>
+          <span>10 個階段</span>
+          <span class="summary-divider" aria-hidden="true"></span>
+          <span>起點：電腦基礎</span>
+        </div>
+
+        <p class="roadmap-fallback" id="roadmap-fallback" role="status">
+          無法顯示學習路線。請啟用 JavaScript 後重新載入頁面。
+        </p>
+        <ol
+          class="roadmap-list"
+          id="roadmap-list"
+          aria-label="資安學習路線，Level 0 到 Level 9"
+        ></ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" />
+              <path d="M13.25 17.75 16.5 21l6.75-7" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">資訊安全教育平台</span>
+            <span class="brand-subtitle">CYBERSECURITY EDUCATION</span>
+          </span>
+        </a>
+        <p>電腦、網路、程式與資訊安全基礎課程。</p>
+        <span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span>
+      </div>
+    </footer>
+  </body>
+</html>

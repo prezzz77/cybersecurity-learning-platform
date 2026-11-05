@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-6 課程：從檔案、資料夾和路徑了解檔案系統如何管理資料，以及程式如何定位檔案。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-6 檔案系統｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-6 檔案系統</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-6</p>
+        <h1 class="lesson-title">檔案系統</h1>
+        <p class="lesson-subtitle">File System</p>
+        <p class="lesson-lead">了解檔案如何以名稱放進資料夾，並透過路徑讓使用者和程式找到需要的資料。</p>
+      </header>
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list"><li>說明檔案、資料夾和檔案系統的用途。</li><li>分辨絕對路徑與相對路徑。</li><li>根據資料夾結構說出檔案的位置。</li></ul>
+      </section>
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="file-definition">
+          <p class="lesson-section-number">01 / 檔案</p>
+          <h2 id="file-definition">檔案是被保存的一段資料</h2>
+          <p><strong>檔案（file）</strong>是以一個整體保存、供程式讀取或修改的一段資料。文字文件、圖片和程式碼都可以存成檔案。檔案內容由電腦保存；檔案名稱則幫助使用者和程式辨認它。</p>
+          <p>檔名不必描述所有內容，但應讓人比較容易知道用途。例如資料夾中的 <code>logo.png</code> 可能是網站標誌圖片。副檔名常用來提示檔案格式，但不能只靠副檔名保證內容一定符合該格式。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="folders">
+          <p class="lesson-section-number">02 / 資料夾</p>
+          <h2 id="folders">資料夾讓檔案有組織</h2>
+          <p><strong>資料夾（folder）</strong>是用來整理檔案，也可以包含其他資料夾。把網站的樣式檔和圖片分開放，能讓結構更清楚，也方便人和程式找到相關內容。</p>
+          <p>電腦中的資料夾會形成一層一層的結構。要找某個檔案，除了知道它的名稱，也要知道它位於哪個資料夾裡。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="path">
+          <p class="lesson-section-number">03 / 路徑</p>
+          <h2 id="path">路徑描述檔案所在的位置</h2>
+          <p><strong>路徑（path）</strong>是從某個起點開始，經過資料夾找到檔案的位址。作業系統和程式使用路徑定位資料；只知道檔名時，如果不同資料夾裡有同名檔案，就無法明確知道要找哪一個。</p>
+          <p><strong>絕對路徑（absolute path）</strong>從<strong>根目錄（root directory，檔案系統中最上層的資料夾）</strong>開始描述完整位置。<strong>相對路徑（relative path）</strong>則根據目前所在資料夾描述位置。同一個檔案可以依照不同起點有不同的相對路徑，但它的絕對位置不會因此改變。</p>
+          <aside class="lesson-note"><strong>本課的路徑例子</strong><p>下方以 <code>project/</code> 作為目前所在資料夾。相對路徑從這裡開始；絕對路徑則從範例系統的根目錄開始。不同作業系統的絕對路徑寫法可能不同。</p></aside>
+        </section>
+        <section class="lesson-section" aria-labelledby="file-system-definition">
+          <p class="lesson-section-number">04 / 檔案系統</p>
+          <h2 id="file-system-definition">作業系統需要管理檔案的位置</h2>
+          <p><strong>檔案系統（file system）</strong>是作業系統用來整理和管理檔案及資料夾的方式。它讓程式能依照名稱和路徑找到資料，也讓使用者能建立、瀏覽和保存檔案。</p>
+          <p>程式通常會要求作業系統依照路徑開啟某個檔案。作業系統再根據目前的檔案系統結構判斷位置，並處理讀取或寫入。程式不必自行理解儲存裝置上每一段資料如何排列。</p>
+        </section>
+      </article>
+      <section class="lesson-section" aria-labelledby="file-tree-title">
+        <p class="lesson-section-number">05 / 互動示意</p>
+        <h2 id="file-tree-title">選擇檔案，查看它的路徑</h2>
+        <p>以 <code>project/</code> 作為目前資料夾。點選檔案，比較從目前位置出發的相對路徑，以及從系統根目錄開始的絕對路徑。</p>
+        <div class="file-tree-demo" data-file-tree>
+          <h3>專案檔案結構</h3>
+          <ul class="file-tree-list" aria-label="project 資料夾中的檔案">
+            <li><button type="button" class="file-tree-item" data-file-path="index.html" data-file-label="index.html" aria-pressed="false"><span aria-hidden="true">▤</span> index.html</button></li>
+            <li><span class="file-tree-folder"><span aria-hidden="true">▰</span> css/</span>
+              <ul><li><button type="button" class="file-tree-item" data-file-path="css/style.css" data-file-label="style.css" aria-pressed="false"><span aria-hidden="true">▤</span> style.css</button></li></ul>
+            </li>
+            <li><span class="file-tree-folder"><span aria-hidden="true">▰</span> images/</span>
+              <ul><li><button type="button" class="file-tree-item" data-file-path="images/logo.png" data-file-label="logo.png" aria-pressed="false"><span aria-hidden="true">▤</span> logo.png</button></li></ul>
+            </li>
+          </ul>
+          <p class="file-tree-path" data-file-path-output role="status" aria-live="polite">選擇一個檔案，這裡會顯示它的相對路徑和範例絕對路徑。</p>
+        </div>
+      </section>
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title">
+        <p class="lesson-section-number">06 / 自我檢查</p><h2 id="quiz-title">小測驗</h2><p class="quiz-instructions">選擇答案後會立即顯示結果與說明。</p>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="檔案內容保存資料；名稱用來辨認檔案，並可和所在資料夾一起定位它。" data-incorrect-explanation="檔案名稱協助辨認檔案，但檔案本身保存的是資料內容。"><fieldset><legend>1. 一張照片存成檔案時，檔案名稱最主要有什麼用途？</legend><label><input type="radio" name="filesystem-quiz-1" value="a" /> 代替照片內容本身</label><label><input type="radio" name="filesystem-quiz-1" value="b" /> 讓 CPU 不需要讀取圖片資料</label><label><input type="radio" name="filesystem-quiz-1" value="c" /> 幫助使用者和程式辨認這份資料</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="相對路徑從目前所在資料夾開始描述位置；若目前在 project，css/style.css 就能定位檔案。" data-incorrect-explanation="相對路徑需要一個目前所在的位置作為起點，不是從整個檔案系統起點開始。"><fieldset><legend>2. 程式目前位於 project/，要找 css 資料夾中的 style.css。哪個是相對路徑？</legend><label><input type="radio" name="filesystem-quiz-2" value="a" /> css/style.css</label><label><input type="radio" name="filesystem-quiz-2" value="b" /> 從檔案系統根目錄開始的完整位置</label><label><input type="radio" name="filesystem-quiz-2" value="c" /> 只寫「檔案」</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="路徑包含資料夾層次，讓系統能在同名檔案存在於不同資料夾時找到指定位置。" data-incorrect-explanation="只靠檔名可能無法區分不同資料夾中的同名檔案；路徑說明檔案所在位置。"><fieldset><legend>3. 專案裡有兩個資料夾都各自有一個 style.css。程式如何指定要讀哪一個？</legend><label><input type="radio" name="filesystem-quiz-3" value="a" /> 只呼叫 CPU</label><label><input type="radio" name="filesystem-quiz-3" value="b" /> 提供包含資料夾位置的路徑</label><label><input type="radio" name="filesystem-quiz-3" value="c" /> 檔案系統會隨機挑一個</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">07 / 與資安的關係</p><h2 id="security-title">程式必須限制可存取的檔案位置</h2>
+        <p>程式使用路徑開啟檔案。如果程式直接接受使用者提供的路徑，卻沒有確認目標位置是否符合預期，程式可能意外讀取或修改原本不打算提供的資料。</p>
+        <p>有一類路徑處理問題稱為<strong>路徑穿越（Path Traversal）</strong>：程式沒有適當限制使用者指定的位置，導致檔案操作超出原本允許的範圍。本課先建立路徑與存取範圍的關係，不進行漏洞利用；之後會再學安全的檔案存取方式。</p>
+      </section>
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2><p>檔案保存資料，資料夾整理檔案，路徑描述檔案位置。檔案系統管理這些結構，讓程式能透過路徑定位資料。</p>
+        <h3>下一步</h3><p>0-7 會介紹作業系統如何依照使用者和檔案權限，決定程式能進行哪些操作。</p>
+      </section>
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="program-process.html">← 0-5 程式與 Process</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="user-permission.html">0-7 使用者與權限 <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="從電腦、作業系統、網路與程式基礎開始，學習資訊安全概念與防護方式。"
+    />
+    <meta name="theme-color" content="#0a111d" />
+    <title>資訊安全教育平台｜Cybersecurity Fundamentals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" />
+              <path d="M13.25 17.75 16.5 21l6.75-7" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">資訊安全教育平台</span>
+            <span class="brand-subtitle">CYBERSECURITY EDUCATION</span>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="開啟導覽選單"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽">
+          <a class="nav-link active" href="index.html" aria-current="page">首頁</a>
+          <a class="nav-link" href="roadmap.html">學習路線</a>
+          <a class="nav-cta" href="roadmap.html">
+            開始學習
+            <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>適合沒有資安經驗的初學者</span>
+          </div>
+          <h1 id="hero-title">資訊安全<br /><span class="text-accent">基礎課程</span></h1>
+          <p class="hero-description">
+            從電腦、作業系統、網路與程式基礎開始，介紹常見安全問題的成因與防護方式。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="roadmap.html">
+              開始學習
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="text-link" href="#principles">
+              查看課程原則
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <div class="hero-note">
+            <span class="note-icon" aria-hidden="true">✳</span>
+            <span>不需要資安或程式背景</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="電腦、網路、程式與資訊安全">
+          <div class="visual-glow" aria-hidden="true"></div>
+          <div class="visual-grid" aria-hidden="true"></div>
+          <div class="visual-label label-top">
+            <span class="label-line" aria-hidden="true"></span>
+            <span>電腦・網路・程式</span>
+          </div>
+          <div class="orbit orbit-outer" aria-hidden="true">
+            <span class="orbit-node node-top"></span>
+            <span class="orbit-node node-left"></span>
+            <span class="orbit-node node-right"></span>
+            <span class="orbit-node node-bottom"></span>
+          </div>
+          <div class="orbit orbit-inner" aria-hidden="true">
+            <span class="orbit-node node-inner"></span>
+          </div>
+          <div class="visual-core">
+            <div class="core-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M24 5 39 11.5v10.3c0 8.85-6 15.08-15 18.75-9-3.67-15-9.9-15-18.75V11.5L24 5Z" />
+                <path d="M18.5 23.5 22.5 27.5l8-8" />
+              </svg>
+            </div>
+            <span class="core-caption">資訊安全</span>
+            <span class="core-caption-en">COMPUTER / NETWORK / SECURITY</span>
+          </div>
+          <div class="visual-label label-bottom">
+            <span class="label-line" aria-hidden="true"></span>
+            <span>基礎與防護</span>
+          </div>
+          <div class="visual-coordinate coordinate-top" aria-hidden="true">10 個學習階段</div>
+          <div class="visual-coordinate coordinate-bottom" aria-hidden="true">從電腦基礎開始</div>
+        </div>
+      </section>
+
+      <section class="approach section-shell" id="principles" aria-labelledby="approach-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">COURSE OVERVIEW <span>—</span> 課程介紹</p>
+            <h2 id="approach-title">課程內容與學習方式</h2>
+          </div>
+          <p class="section-intro">
+            課程涵蓋電腦、作業系統、網路與程式基礎，以及它們和資訊安全的關係。
+          </p>
+        </div>
+
+        <div class="principle-grid">
+          <article class="principle-card">
+            <span class="card-index">01</span>
+            <div class="principle-icon icon-foundation" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <rect x="5" y="6" width="22" height="15" rx="2" />
+                <path d="M11 26h10M16 21v5M10 11h5M10 15h12" />
+              </svg>
+            </div>
+            <h3>電腦與網路基礎</h3>
+            <p>從硬體、作業系統與網路概念開始，不需要先備知識。</p>
+            <span class="card-foot">COMPUTER / OS / NETWORK</span>
+          </article>
+
+          <article class="principle-card">
+            <span class="card-index">02</span>
+            <div class="principle-icon icon-understanding" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <circle cx="15" cy="14" r="8" />
+                <path d="m21 20 6 6M12 14h6M15 11v6" />
+              </svg>
+            </div>
+            <h3>說明問題成因</h3>
+            <p>每個主題會介紹系統的正常運作方式，以及安全問題如何發生。</p>
+            <span class="card-foot">CONCEPTS / CAUSES / EXAMPLES</span>
+          </article>
+
+          <article class="principle-card">
+            <span class="card-index">03</span>
+            <div class="principle-icon icon-defense" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M16 4 26 8.5v7c0 5.9-4 10.05-10 12.5C10 25.55 6 21.4 6 15.5v-7L16 4Z" />
+                <path d="m12 15.5 2.5 2.5 5.5-6" />
+              </svg>
+            </div>
+            <h3>安全實驗與防護</h3>
+            <p>漏洞練習限於本地或授權的教學環境，並介紹相應的防護方式。</p>
+            <span class="card-foot">AUTHORIZED LABS / DEFENSE</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="roadmap-preview section-shell" aria-labelledby="roadmap-preview-title">
+        <div class="roadmap-preview-copy">
+          <p class="section-kicker">LEARNING ROADMAP <span>—</span> 學習路線</p>
+          <h2 id="roadmap-preview-title">查看十個學習階段</h2>
+          <p>從電腦基礎開始，接著學習網路、Linux、程式、Web 與安全主題。</p>
+        </div>
+        <a class="button button-primary" href="roadmap.html">
+          前往學習路線
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" />
+              <path d="M13.25 17.75 16.5 21l6.75-7" />
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">資訊安全教育平台</span>
+            <span class="brand-subtitle">CYBERSECURITY EDUCATION</span>
+          </span>
+        </a>
+        <p>電腦、網路、程式與資訊安全基礎課程。</p>
+        <span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-7 課程：了解使用者、Process 和檔案之間的關係，並用簡化模型測試讀取、修改和執行權限。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-7 使用者與權限｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-7 使用者與權限</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-7</p>
+        <h1 class="lesson-title">使用者與權限</h1>
+        <p class="lesson-subtitle">Users &amp; Permissions</p>
+        <p class="lesson-lead">了解作業系統如何區分使用者，並依照檔案權限決定執行中的程式可以讀取、修改或執行哪些內容。</p>
+      </header>
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list"><li>說明作業系統為什麼要區分使用者。</li><li>分辨 Read、Write、Execute 三種基本權限。</li><li>描述 User、Process 和 File 如何一起影響一次操作能否進行。</li></ul>
+      </section>
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="why-users">
+          <p class="lesson-section-number">01 / 使用者</p>
+          <h2 id="why-users">為什麼作業系統需要 User？</h2>
+          <p><strong>使用者（User）</strong>是作業系統用來識別正在使用電腦的人或服務的帳號。使用者帳號讓系統能分辨不同工作和資料的歸屬，並依照需要決定允許哪些操作。</p>
+          <p>如果多個人共用一台電腦，系統不能假設每個人都應該查看或修改所有資料。區分使用者有助於保護彼此的檔案，也讓程式能在適當的使用者身分下執行。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="permission">
+          <p class="lesson-section-number">02 / 權限</p>
+          <h2 id="permission">權限決定可以做什麼</h2>
+          <p><strong>權限（Permission）</strong>是作業系統用來規定使用者或程式能對資源進行哪些操作的設定。檔案的權限可能包括讀取、修改內容或把檔案當成程式執行。</p>
+          <ul class="objective-list">
+            <li><strong>讀取（Read）</strong>：查看檔案內容。</li>
+            <li><strong>寫入（Write）</strong>：建立或修改檔案內容。</li>
+            <li><strong>執行（Execute）</strong>：要求系統把檔案當成程式啟動。</li>
+          </ul>
+          <p>不是每個使用者都需要所有權限。例如，報告檔案可以允許某人讀取，但不允許修改；程式檔案也可以限制誰能啟動。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="user-process-file">
+          <p class="lesson-section-number">03 / User、Process、File</p>
+          <h2 id="user-process-file">一次檔案操作會經過哪些角色？</h2>
+          <p>使用者啟動程式後，作業系統會建立 Process。當 Process 嘗試讀取或修改檔案時，作業系統會檢查這次操作是否符合檔案權限。這裡的 User、Process、File 分別代表操作身分、正在工作的程式活動，以及被存取的資源。</p>
+          <div class="concept-flow" role="img" aria-label="使用者啟動程式，作業系統建立 Process，Process 嘗試存取 File">
+            <div class="concept-flow-step"><span>USER</span><strong>使用者</strong><small>啟動程式</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>PROCESS</span><strong>Process</strong><small>代表一次執行活動</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>FILE</span><strong>檔案</strong><small>檢查操作是否允許</small></div>
+          </div>
+          <p>權限檢查不是由檔案名稱決定。系統會根據目前的使用者、程式活動和檔案所設定的允許操作來做判斷。</p>
+        </section>
+      </article>
+      <section class="lesson-section" aria-labelledby="permission-demo-title">
+        <p class="lesson-section-number">04 / 互動示意</p>
+        <h2 id="permission-demo-title">變更權限，觀察操作是否允許</h2>
+        <p>以下是簡化的教學模型：使用者 Mei 啟動的 Process 嘗試操作 report.txt。切換檔案權限或選擇操作，查看系統依目前設定做出的判斷。</p>
+        <div class="permission-demo" data-permission-demo>
+          <div class="permission-demo-subject"><span>USER</span><strong>Mei</strong><span aria-hidden="true">→</span><span>PROCESS</span><strong>report viewer</strong><span aria-hidden="true">→</span><span>FILE</span><strong>report.txt</strong></div>
+          <fieldset class="permission-controls">
+            <legend>report.txt 的檔案權限</legend>
+            <label><input type="checkbox" data-permission value="read" checked /> Read <span>讀取</span></label>
+            <label><input type="checkbox" data-permission value="write" /> Write <span>修改</span></label>
+            <label><input type="checkbox" data-permission value="execute" /> Execute <span>執行</span></label>
+          </fieldset>
+          <label class="permission-operation">Process 要進行的操作
+            <select data-permission-operation aria-label="選擇 Process 要對 report.txt 進行的操作">
+              <option value="read">讀取</option>
+              <option value="write">修改</option>
+              <option value="execute">執行</option>
+            </select>
+          </label>
+          <p class="permission-result" data-permission-result role="status" aria-live="polite">允許：使用者 Mei 的 Process 可以讀取 report.txt。這是依照目前勾選的檔案權限作出的判斷。</p>
+        </div>
+      </section>
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title">
+        <p class="lesson-section-number">05 / 自我檢查</p><h2 id="quiz-title">小測驗</h2><p class="quiz-instructions">選擇答案後會立即顯示結果與說明。</p>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="使用者區分了不同的操作身分，作業系統才能依照各自需求管理資料存取。" data-incorrect-explanation="使用者帳號的作用是區分操作身分，讓系統能管理資料和資源存取。"><fieldset><legend>1. 多人共用一台電腦時，區分使用者最主要能幫助系統做什麼？</legend><label><input type="radio" name="permission-quiz-1" value="a" /> 讓每個人的程式都自動加速</label><label><input type="radio" name="permission-quiz-1" value="b" /> 依照不同身分管理資料和操作範圍</label><label><input type="radio" name="permission-quiz-1" value="c" /> 讓檔案不需要名稱</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="Read 允許查看檔案內容；若沒有 Write，使用者不能依此權限修改內容。" data-incorrect-explanation="Read 代表讀取內容。修改檔案內容需要 Write 權限。"><fieldset><legend>2. 一個檔案允許 Read，但不允許 Write。使用者可以做什麼？</legend><label><input type="radio" name="permission-quiz-2" value="a" /> 查看檔案內容，但不能依此權限修改</label><label><input type="radio" name="permission-quiz-2" value="b" /> 修改檔案，但不能查看</label><label><input type="radio" name="permission-quiz-2" value="c" /> 一定能執行檔案</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="實際嘗試存取檔案的是 Process；系統會根據啟動它的使用者和檔案權限判斷是否允許。" data-incorrect-explanation="User 提供操作身分，Process 發出存取請求，File 是要存取的資源；系統會依權限檢查這次操作。"><fieldset><legend>3. 使用者開啟程式後，程式要讀取一個檔案。哪項描述正確？</legend><label><input type="radio" name="permission-quiz-3" value="a" /> 只有 User 和 File 有關，Process 不參與操作</label><label><input type="radio" name="permission-quiz-3" value="b" /> 只要知道檔案名稱，任何 Process 都能讀取</label><label><input type="radio" name="permission-quiz-3" value="c" /> Process 嘗試讀取，系統會依使用者和檔案權限判斷</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="Execute 權限表示可以要求系統把檔案當成程式啟動；它和讀取、修改是不同操作。" data-incorrect-explanation="Execute 是啟動程式相關的權限，不是修改檔案內容；修改對應 Write。"><fieldset><legend>4. 哪一種權限與啟動程式檔案有關？</legend><label><input type="radio" name="permission-quiz-4" value="a" /> Read</label><label><input type="radio" name="permission-quiz-4" value="b" /> Execute</label><label><input type="radio" name="permission-quiz-4" value="c" /> Write</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">06 / 與資安的關係</p><h2 id="security-title">權限限制程式可以接觸的資料</h2>
+        <p>程式可能出錯，也可能被不當使用。若每個 Process 都能讀寫所有檔案，一個程式的問題就可能影響其他使用者的資料。作業系統透過權限檢查限制可進行的操作，降低不必要的存取。</p>
+        <p>安全設定通常只授予工作所需的權限。這樣即使程式出現問題，它可造成的影響也較受限制。後續 Linux 和系統安全課程會再介紹如何設定與管理權限；本課不涉及權限命令或進階存取控制機制。</p>
+      </section>
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2><p>User 表示操作身分，Process 代表一次執行活動，File 是被存取的資源。Read、Write、Execute 描述不同操作；作業系統依照權限判斷操作能否進行。</p>
+        <h3>下一步</h3><p>0-8 會介紹如何透過 Terminal 和文字命令與作業系統互動。</p>
+      </section>
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="file-system.html">← 0-6 檔案系統</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="terminal.html">0-8 Terminal 與 Command Line <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>

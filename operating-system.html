@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-9 課程：了解作業系統為什麼存在，以及它如何協調 CPU、Process、記憶體、檔案、使用者和權限。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-9 作業系統｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-9 作業系統</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-9</p>
+        <h1 class="lesson-title">作業系統</h1>
+        <p class="lesson-subtitle">Operating System</p>
+        <p class="lesson-lead">從程式使用硬體時會遇到的問題，了解作業系統如何管理處理器、記憶體、檔案、使用者和權限。</p>
+      </header>
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list"><li>說明程式若直接管理硬體，會遇到哪些協調問題。</li><li>描述作業系統提供的管理與抽象功能。</li><li>連結 CPU、Process、Memory、File System、User 和 Permission 的角色。</li></ul>
+      </section>
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="without-os">
+          <p class="lesson-section-number">01 / 沒有共同管理</p>
+          <h2 id="without-os">每個程式都直接操作硬體會怎樣？</h2>
+          <p>程式需要使用 CPU 執行指令、使用 RAM 暫存資料、從 Storage 讀取檔案，也需要透過鍵盤、滑鼠接收輸入，並把結果送到螢幕。如果每個程式都要自行處理每一種硬體細節，程式會變得複雜，也難以在不同設備上使用。</p>
+          <p>多個程式若同時自行操作硬體，還需要避免彼此搶用或覆蓋資料。例如兩個程式都要使用記憶體或讀寫同一個檔案時，必須有人協調操作順序與存取範圍。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="os-role">
+          <p class="lesson-section-number">02 / 作業系統的角色</p>
+          <h2 id="os-role">作業系統管理程式使用的資源</h2>
+          <p><strong>作業系統（Operating System，OS）</strong>是管理電腦硬體資源並提供程式使用的系統軟體。它為程式提供一致的操作方式，例如讀取檔案、接收輸入和使用記憶體，並負責協調程式與硬體之間的工作。</p>
+          <p>程式透過作業系統提出資源使用要求，不必為每一種硬體自行處理所有底層細節。作業系統也會檢查要求是否符合目前使用者和資源的權限。</p>
+          <div class="concept-flow" role="img" aria-label="應用程式使用作業系統提供的操作，作業系統管理硬體資源">
+            <div class="concept-flow-step"><span>APPLICATION</span><strong>應用程式</strong><small>提出工作需求</small></div><span class="concept-flow-arrow" aria-hidden="true">↓</span>
+            <div class="concept-flow-step"><span>OPERATING SYSTEM</span><strong>作業系統</strong><small>管理並協調資源</small></div><span class="concept-flow-arrow" aria-hidden="true">↓</span>
+            <div class="concept-flow-step"><span>HARDWARE</span><strong>硬體</strong><small>CPU、記憶體、儲存裝置和輸入輸出設備</small></div>
+          </div>
+        </section>
+        <section class="lesson-section" aria-labelledby="os-resources">
+          <p class="lesson-section-number">03 / 管理哪些資源</p>
+          <h2 id="os-resources">把 Level 0 的概念連在一起</h2>
+          <ul class="objective-list">
+            <li><strong>CPU 與 Process：</strong>作業系統管理正在執行的程式，協調它們如何使用 CPU。</li>
+            <li><strong>Memory：</strong>作業系統管理執行中的程式和資料使用的記憶體。</li>
+            <li><strong>File System：</strong>作業系統管理檔案與資料夾，讓程式能依照路徑定位資料。</li>
+            <li><strong>User 與 Permission：</strong>作業系統辨認操作身分，並限制可讀取、修改或執行的資源。</li>
+          </ul>
+          <p>鍵盤、滑鼠和螢幕等輸入輸出設備也由作業系統協調使用。程式可以透過一致的操作方式取得輸入或呈現結果，不必各自管理所有硬體細節。</p>
+        </section>
+      </article>
+      <section class="lesson-section" aria-labelledby="os-manager-title">
+        <p class="lesson-section-number">04 / 互動示意</p>
+        <h2 id="os-manager-title">查看作業系統管理的物件</h2>
+        <p>切換使用者並選擇程式或檔案，查看作業系統管理的內容、管理原因，以及它連到哪個 Level 0 概念。此為簡化模型，不代表作業系統內部所有實作。</p>
+        <div class="os-manager" data-os-manager>
+          <label class="os-manager-user">目前使用者
+            <select data-os-user aria-label="選擇目前使用者">
+              <option value="Alice">Alice</option>
+              <option value="Bob">Bob</option>
+            </select>
+          </label>
+          <div class="os-manager-groups">
+            <fieldset class="os-manager-group">
+              <legend>正在執行的 Process</legend>
+              <button type="button" class="os-object" data-os-object data-os-kind="process" data-os-name="Browser">Browser</button>
+              <button type="button" class="os-object" data-os-object data-os-kind="process" data-os-name="Terminal">Terminal</button>
+              <button type="button" class="os-object" data-os-object data-os-kind="process" data-os-name="Text Editor">Text Editor</button>
+            </fieldset>
+            <fieldset class="os-manager-group">
+              <legend>檔案與資料夾</legend>
+              <button type="button" class="os-object" data-os-object data-os-kind="file" data-os-name="notes.txt" data-os-alice="read-write" data-os-bob="read">notes.txt</button>
+              <button type="button" class="os-object" data-os-object data-os-kind="file" data-os-name="project/" data-os-alice="read-write" data-os-bob="read">project/</button>
+              <button type="button" class="os-object" data-os-object data-os-kind="file" data-os-name="secret.txt" data-os-alice="read-write" data-os-bob="none">secret.txt</button>
+            </fieldset>
+          </div>
+          <div class="os-manager-detail" data-os-detail role="status" aria-live="polite">
+            <h3 data-os-detail-title>作業系統管理資源</h3>
+            <p data-os-detail-description>選擇上方的 Process 或檔案，查看它和作業系統的關係。</p>
+            <p data-os-detail-relation></p>
+          </div>
+        </div>
+      </section>
+      <section class="lesson-section" aria-labelledby="system-model-title">
+        <p class="lesson-section-number">05 / 系統模型</p>
+        <h2 id="system-model-title">不同資源會互相影響</h2>
+        <p>下圖是概念整理，不是所有電腦操作都必須依照同一條路徑進行。作業系統會按不同工作協調程式、使用者、檔案和硬體資源。</p>
+        <div class="os-system-model" role="img" aria-label="使用者與應用程式透過作業系統使用 Process、檔案、權限、CPU、記憶體和儲存裝置">
+          <div class="os-model-node">User</div><span aria-hidden="true">↓</span>
+          <div class="os-model-node">Applications</div><span aria-hidden="true">↓</span>
+          <div class="os-model-node os-model-os">Operating System</div>
+          <div class="os-model-resources"><span>Process</span><span>Files</span><span>Permissions</span></div>
+          <span aria-hidden="true">↕</span>
+          <div class="os-model-node">CPU <span>·</span> Memory</div><span aria-hidden="true">↕</span>
+          <div class="os-model-node">Storage</div>
+        </div>
+      </section>
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title" data-confirm-quiz>
+        <p class="lesson-section-number">06 / 自我檢查</p><h2 id="quiz-title">小測驗</h2><p class="quiz-instructions">共 4 題。每題選擇答案後按「確認答案」查看解析；尚未選擇時不會判定。</p>
+        <p class="quiz-score" data-quiz-score aria-live="polite">得分：0 / 4</p>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="沒有共同管理時，每個程式都要自行處理大量硬體細節，並且更難協調多個程式的資源使用。作業系統提供一層管理，讓程式以一致方式使用資源。"><fieldset><legend>1. 如果每個應用程式都必須自己直接管理 CPU、RAM、Storage 等硬體，最主要的問題是什麼？</legend><label><input type="radio" name="os-quiz-1" value="a" data-option-explanation="程式仍然需要 CPU、RAM 和 Storage。作業系統的作用不是移除硬體，而是管理程式如何使用硬體。" /> 電腦就完全不需要 CPU 或記憶體</label><label><input type="radio" name="os-quiz-1" value="b" /> 程式需要自行處理大量硬體細節，也更難協調不同程式的資源使用</label><label><input type="radio" name="os-quiz-1" value="c" data-option-explanation="直接管理硬體不會讓程式更簡單，反而使程式需要各自處理更多硬體細節。" /> 每個程式會自動變得更簡單、更容易管理</label><label><input type="radio" name="os-quiz-1" value="d" data-option-explanation="各程式直接操作硬體不會自動避免衝突；缺少共同協調時，資源使用更難管理。" /> 不同程式之間就不會發生資源干擾</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="os-feedback-1">確認答案</button><p class="quiz-feedback" id="os-feedback-1" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="Program 是可執行的程式內容；程式開始執行後會形成 Process。作業系統需要管理這些執行活動及其資源使用。"><fieldset><legend>2. 使用者同時開啟瀏覽器與文字編輯器。從 Level 0 所學的概念來看，OS 為什麼需要知道這些程式正在執行？</legend><label><input type="radio" name="os-quiz-2" value="a" data-option-explanation="Process 是執行中的程式活動，並不是另一顆 CPU；作業系統要協調它使用系統資源。" /> 因為每個程式都會變成一顆新的 CPU</label><label><input type="radio" name="os-quiz-2" value="b" data-option-explanation="程式檔案可以保存在 Storage，但開啟後還會形成正在執行的 Process，作業系統需要管理這次活動。" /> 因為程式檔案在開啟後就不再存在</label><label><input type="radio" name="os-quiz-2" value="c" /> 因為它們形成 Process，需要由 OS 管理執行與資源使用</label><label><input type="radio" name="os-quiz-2" value="d" data-option-explanation="Process 的執行會使用 CPU、記憶體等資源，因此作業系統需要管理，不是只有程式自行決定。" /> 因為每個 Process 都能自行決定使用多少系統資源</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="os-feedback-2">確認答案</button><p class="quiz-feedback" id="os-feedback-2" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="File System 依路徑定位檔案；Permission 決定 User 啟動的 Process 能否讀取；Operating System 負責管理並執行這些存取限制。"><fieldset><legend>3. User A 可以讀取 notes.txt，User B 沒有讀取權限。哪一組概念最能解釋這個情況？</legend><label><input type="radio" name="os-quiz-3" value="a" /> User、File、Permission 和 Operating System</label><label><input type="radio" name="os-quiz-3" value="b" data-option-explanation="檔案名稱能協助定位資料，但不能決定哪些使用者可以讀取；這由 Permission 等存取規則限制。" /> 只有 File 的名稱</label><label><input type="radio" name="os-quiz-3" value="c" data-option-explanation="CPU 和 RAM 參與程式執行，但無法單獨解釋不同使用者對同一檔案有不同的讀取結果。" /> 只有 CPU 和 RAM</label><label><input type="radio" name="os-quiz-3" value="d" data-option-explanation="Process 是正在執行的程式活動；是否能讀取檔案還要看 User、Permission 和作業系統的檢查。" /> 只有 Process 是否正在執行</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="os-feedback-3">確認答案</button><p class="quiz-feedback" id="os-feedback-3" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="d" data-correct-explanation="Alice 是使用者，在 Terminal 輸入的 Command 由 Shell 處理後要求 OS 操作。OS 管理 Process 對 File 的存取。這是概念模型，用來說明角色關係，不代表所有作業系統內部操作都遵循單一固定順序。"><fieldset><legend>4. Alice 在 Terminal 中輸入命令，要求某個程式讀取 data.txt。哪個描述最合理？</legend><label><input type="radio" name="os-quiz-4" value="a" data-option-explanation="Terminal 提供文字介面，不會直接替使用者讀取所有檔案；命令會由 Shell 處理，再由作業系統管理操作。" /> Terminal 直接讀取檔案，無須程式或作業系統</label><label><input type="radio" name="os-quiz-4" value="b" data-option-explanation="CPU 執行指令，但不會判定使用者的檔案權限；存取管理由作業系統負責。" /> CPU 判斷 Alice 是否有權限，再顯示檔案</label><label><input type="radio" name="os-quiz-4" value="c" data-option-explanation="使用者輸入命令後，Shell 會先處理它並要求作業系統操作，不是由 File 反向啟動所有步驟。" /> File System 啟動 Alice，再由 Terminal 建立 User</label><label><input type="radio" name="os-quiz-4" value="d" /> Alice 使用 Terminal 輸入命令，Shell 解析後要求 OS 管理 Process 對 File 的存取</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="os-feedback-4">確認答案</button><p class="quiz-feedback" id="os-feedback-4" role="status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">07 / 與資安的關係</p><h2 id="security-title">作業系統負責執行資源存取規則</h2>
+        <p>使用者和程式會持續要求讀寫檔案、使用記憶體或操作設備。作業系統管理這些資源，並依照權限檢查操作是否允許。若系統不能區分不同使用者或限制 Process 的存取範圍，程式錯誤就更容易影響其他資料和工作。</p>
+        <p>理解作業系統如何管理資源，是後續學習權限、隔離與系統安全的基礎。本課只整理 Level 0 已介紹的概念，不深入內部實作。</p>
+      </section>
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2><p>作業系統管理程式與硬體資源的使用，包含 Process、CPU、記憶體、檔案系統、使用者和權限。它提供程式使用資源的方式，也協調多個程式和使用者之間的操作。</p>
+        <h3>下一步</h3><p>0-10 會用系統情境題檢查 Level 0 的概念是否能互相連結。完成後，下一個 Level 才會開始介紹網路基礎。</p>
+      </section>
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="terminal.html">← 0-8 Terminal 與 Command Line</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="level0-review.html">0-10 Level 0 Review <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>

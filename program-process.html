@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-5 課程：了解 Program 如何載入記憶體並成為 Process，以及同一個程式如何有多次執行活動。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-5 程式與 Process｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-5 程式與 Process</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-5</p>
+        <h1 class="lesson-title">程式與 Process</h1>
+        <p class="lesson-subtitle">Program &amp; Process</p>
+        <p class="lesson-lead">比較儲存中的程式內容和正在執行中的一次活動，了解作業系統如何讓一份程式開始工作。</p>
+      </header>
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list"><li>說明 Program 和 Process 分別代表什麼。</li><li>描述程式載入 RAM 後，作業系統如何建立 Process。</li><li>解釋同一個 Program 為什麼可以同時有多個 Process。</li></ul>
+      </section>
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="program-review">
+          <p class="lesson-section-number">01 / 回顧 Program</p>
+          <h2 id="program-review">Program 是可以執行的內容</h2>
+          <p><strong>程式（Program）</strong>是一組描述操作的指令，以及執行時會用到的相關資料。它可以保存在 SSD 或 HDD 上，即使目前沒有執行，程式檔案仍然存在。</p>
+          <p>例如文字編輯器的程式檔案可以留在儲存裝置中。檔案存在不代表文字編輯器正在運作；它只代表電腦有一份可供載入的程式內容。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="from-program">
+          <p class="lesson-section-number">02 / 從 Program 到 Process</p>
+          <h2 id="from-program">作業系統建立一次執行活動</h2>
+          <p>當使用者開啟程式，<strong>作業系統（Operating System）</strong>會把程式執行需要的內容載入 RAM，並建立<strong>程序（Process）</strong>。Process 是一次正在執行的程式活動，以及這次執行所需的狀態和資源。</p>
+          <p>CPU 接著執行這個 Process 使用的程式指令。程式內容回答「要執行什麼」；Process 則代表「這份程式目前的一次實際執行」。所以 Program 和 Process 不相同。</p>
+          <aside class="lesson-note"><strong>兩者的差別</strong><p>Program 可以留在儲存裝置上而不執行。Process 代表程式正在執行的一次活動；關閉程式後，這次活動結束，但程式檔案仍可存在。</p></aside>
+        </section>
+        <section class="lesson-section" aria-labelledby="multiple-processes">
+          <p class="lesson-section-number">03 / 一份程式，多次執行</p>
+          <h2 id="multiple-processes">每次開啟都可能是另一個 Process</h2>
+          <p>同一份 Program 可以同時被開啟多次。每次開啟都可能建立獨立的 Process，各自處理不同文件或工作。它們使用相同的程式內容，但正在進行的活動和資料不必相同。</p>
+          <p>例如同一個計算程式可以開兩個視窗：一個計算 2 + 3，另一個計算 8 × 2。程式檔案相同，但每次執行各自有要處理的資料和結果。</p>
+        </section>
+      </article>
+      <section class="lesson-section" aria-labelledby="process-demo-title">
+        <p class="lesson-section-number">04 / 互動示意</p>
+        <h2 id="process-demo-title">追蹤程式如何開始執行</h2>
+        <p>選擇每個步驟查看 Program 和 Process 的差別，或播放完整流程。</p>
+        <div class="computer-demo" data-flow-demo>
+          <div class="computer-demo-heading"><div><h3>Program → Process</h3><p>程式檔案仍存在；Process 是一次執行活動。</p></div><button class="button button-primary demo-run" type="button" data-flow-run aria-controls="process-flow">播放流程 <span class="button-arrow" aria-hidden="true">→</span></button></div>
+          <ol class="computer-flow computer-flow-selectable" id="process-flow" aria-label="Program 載入 RAM、建立 Process，再由 CPU 執行">
+            <li><button class="computer-flow-step" type="button" data-flow-step data-flow-select data-flow-label="Program：可執行的指令和相關資料保存在儲存裝置上。此時程式內容存在，但不一定正在執行。" aria-pressed="false"><span class="flow-step-index">01</span><strong>Program</strong><span>儲存裝置上的程式內容</span><small>即使沒有執行，程式檔案仍可存在</small></button></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li><button class="computer-flow-step" type="button" data-flow-step data-flow-select data-flow-label="載入 RAM：作業系統將程式執行需要的指令和資料載入記憶體。這是從程式內容到執行活動的準備步驟。" aria-pressed="false"><span class="flow-step-index">02</span><strong>載入 RAM</strong><span>準備執行內容</span><small>Program 的執行內容進入記憶體</small></button></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li><button class="computer-flow-step" type="button" data-flow-step data-flow-select data-flow-label="建立 Process：作業系統為這次程式執行建立 Process。它代表一次實際活動，包含執行所需的狀態和資源。" aria-pressed="false"><span class="flow-step-index">03</span><strong>建立 Process</strong><span>一次執行活動</span><small>同一個 Program 可建立多個 Process</small></button></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li><button class="computer-flow-step" type="button" data-flow-step data-flow-select data-flow-label="CPU 執行：CPU 執行這個 Process 使用的程式指令，並處理它目前使用的資料。這時程式正在進行一次實際執行。" aria-pressed="false"><span class="flow-step-index">04</span><strong>CPU 執行</strong><span>執行 Process 中的指令</span><small>程式進入實際工作階段</small></button></li>
+          </ol>
+          <p class="demo-status" data-flow-status role="status" aria-live="polite">選擇一個步驟，或播放完整流程。</p>
+        </div>
+      </section>
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title">
+        <p class="lesson-section-number">05 / 自我檢查</p><h2 id="quiz-title">小測驗</h2><p class="quiz-instructions">選擇答案後會立即顯示結果與說明。</p>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="Program 是可執行的程式內容；Process 代表其中一次正在進行的執行活動。" data-incorrect-explanation="程式檔案可以存在而沒有執行。Process 指的是程式的一次實際執行活動。"><fieldset><legend>1. 文字編輯器已安裝在電腦，但你還沒開啟它。哪項描述正確？</legend><label><input type="radio" name="process-quiz-1" value="a" /> 它已經有一個正在執行的 Process</label><label><input type="radio" name="process-quiz-1" value="b" /> Program 存在，但目前不一定有 Process</label><label><input type="radio" name="process-quiz-1" value="c" /> Program 和 Process 是同一個東西</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="每次啟動都是一次實際執行活動，因此同一個 Program 可以有多個 Process。" data-incorrect-explanation="Program 是可重複載入的程式內容。多次開啟時，每次執行都可以有自己的 Process。"><fieldset><legend>2. 同一個計算程式開啟兩次，可能發生什麼事？</legend><label><input type="radio" name="process-quiz-2" value="a" /> 一份 Program 對應到兩個 Process</label><label><input type="radio" name="process-quiz-2" value="b" /> 電腦必須複製整個 CPU</label><label><input type="radio" name="process-quiz-2" value="c" /> 第二次開啟會刪除原本的 Program</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="作業系統載入程式執行所需內容並建立 Process，CPU 才能執行這次活動中的指令。" data-incorrect-explanation="基本流程是程式內容載入 RAM、作業系統建立 Process，再由 CPU 執行其中的指令。"><fieldset><legend>3. 哪個順序最符合程式開始執行時的基本流程？</legend><label><input type="radio" name="process-quiz-3" value="a" /> CPU 執行 → 刪除 Program → 建立 RAM</label><label><input type="radio" name="process-quiz-3" value="b" /> 建立 Process → 程式才存在 → 存到 CPU</label><label><input type="radio" name="process-quiz-3" value="c" /> Program 載入 RAM → 建立 Process → CPU 執行</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">06 / 與資安的關係</p><h2 id="security-title">Process 的資料和資源需要受到限制</h2>
+        <p>電腦可能同時執行多個 Process。作業系統會限制一個 Process 能存取的資料和資源，避免程式任意讀取其他 Process 正在使用的內容。這種隔離有助於降低錯誤或遭濫用時對其他工作造成的影響。</p>
+        <p>Process 能做什麼也和啟動它的使用者及權限有關。下一課會介紹檔案如何以路徑定位；0-7 再說明使用者與權限如何影響檔案操作。本課不深入作業系統的內部管理機制。</p>
+      </section>
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2><p>Program 是可執行的程式內容；Process 是這份程式的一次執行活動。作業系統載入程式並建立 Process，CPU 再執行其中的指令；同一個 Program 可以同時有多個 Process。</p>
+        <h3>下一步</h3><p>0-6 會介紹檔案、資料夾和路徑，以及程式如何透過路徑找到資料。</p>
+      </section>
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="program-data.html">← 0-4 程式與資料</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="file-system.html">0-6 檔案系統 <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>

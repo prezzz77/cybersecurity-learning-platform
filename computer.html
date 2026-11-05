@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="第一課：什麼是電腦？從輸入、處理與輸出開始，認識資料、程式、CPU、記憶體與儲存裝置。"
+    />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-1 什麼是電腦？｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" />
+              <path d="M13.25 17.75 16.5 21l6.75-7" />
+            </svg>
+          </span>
+          <span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="開啟導覽選單"
+        >
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽">
+          <a class="nav-link" href="index.html">首頁</a>
+          <a class="nav-link active" href="roadmap.html">學習路線</a>
+          <a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽">
+        <a href="index.html">首頁</a>
+        <span aria-hidden="true">/</span>
+        <a href="roadmap.html">學習路線</a>
+        <span aria-hidden="true">/</span>
+        <a href="computer-fundamentals.html">Computer Fundamentals</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">0-1 什麼是電腦？</span>
+      </nav>
+
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-1</p>
+        <h1 class="lesson-title">什麼是電腦？</h1>
+        <p class="lesson-subtitle">Computer Fundamentals</p>
+        <p class="lesson-lead">
+          本課從電腦如何接收與處理資料開始，介紹程式、CPU、記憶體和儲存裝置各自負責的工作。
+        </p>
+      </header>
+
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list">
+          <li>用輸入、處理、輸出說明電腦的基本工作流程。</li>
+          <li>分辨資料、程式與 CPU 的角色。</li>
+          <li>說明程式從儲存裝置載入記憶體後如何執行。</li>
+        </ul>
+      </section>
+
+      <article class="lesson-content">
+        <section class="lesson-section" id="computer-model" aria-labelledby="computer-model-title">
+          <p class="lesson-section-number">01 / 電腦的工作</p>
+          <h2 id="computer-model-title">電腦到底是什麼？</h2>
+          <p>
+            想想手機計算小費時發生什麼事：你輸入金額和百分比，手機依照計算規則處理數字，最後顯示結果。這種「收到資料、處理資料、提供結果」的裝置，就是我們先要認識的電腦。
+          </p>
+          <p>
+            把這個流程畫成圖，就是電腦最基本的工作模型。輸入可以是鍵盤按鍵或觸控；輸出可以是螢幕上的文字、聲音或儲存的檔案。
+          </p>
+          <div class="concept-flow" role="img" aria-label="輸入資料，經過電腦處理，再產生輸出">
+            <div class="concept-flow-step"><span>INPUT</span><strong>輸入</strong><small>金額與百分比</small></div>
+            <span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>PROCESSING</span><strong>處理</strong><small>依規則計算</small></div>
+            <span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>OUTPUT</span><strong>輸出</strong><small>顯示計算結果</small></div>
+          </div>
+          <p>
+            這只是第一層簡化模型。實際的電腦還需要存放資料的<strong>記憶體（Memory）</strong>、執行操作的<strong>中央處理器（CPU，Central Processing Unit）</strong>，以及保存程式和檔案的<strong>儲存裝置（Storage）</strong>。接下來會逐一介紹這些部分。
+          </p>
+        </section>
+
+        <section class="lesson-section" id="data" aria-labelledby="data-title">
+          <p class="lesson-section-number">02 / 資料</p>
+          <h2 id="data-title">電腦處理的是資料</h2>
+          <p>
+            人會直接看出一張照片裡有什麼，或聽出音樂的旋律。電腦本身並不理解「照片」或「音樂」這些人類概念；它依照程式處理資料，再由適當的程式把資料呈現成圖片、文字或聲音。
+          </p>
+          <p>
+            電腦裡最基本的資料單位是<strong>位元（bit）</strong>，可以記錄兩種狀態，常用 0 和 1 表示。多個 bit 組合起來可以表示更多資訊。<strong>位元組（byte）</strong>通常由 8 個 bit 組成，是常用的資料大小單位。
+          </p>
+          <p>
+            <strong>二進位（binary）</strong>是使用 0 和 1 表示數值的方式。這一課不需要換算二進位；先記得，文字、圖片和音訊在電腦中都會以資料形式保存和處理。
+          </p>
+          <aside class="lesson-note">
+            <strong>例子</strong>
+            <p>一張圖片檔案是資料。看圖程式依照資料格式讀取內容，才能把它顯示成畫面。</p>
+          </aside>
+        </section>
+
+        <section class="lesson-section" id="program" aria-labelledby="program-title">
+          <p class="lesson-section-number">03 / 程式</p>
+          <h2 id="program-title">程式告訴電腦要做哪些操作</h2>
+          <p>
+            <strong>程式（program）</strong>是一組指令，用來描述電腦要執行哪些操作，以及操作的順序。像計算小費的程式，會讀取輸入的金額和比例、計算結果，再把結果顯示出來。
+          </p>
+          <p>電腦執行工作時，需要程式提供步驟，也需要資料作為處理對象：</p>
+          <div class="equation-flow" aria-label="資料加上程式，電腦依照指令處理資料">
+            <span>Data <small>要處理的資料</small></span>
+            <b aria-hidden="true">+</b>
+            <span>Program <small>操作指令</small></span>
+            <b aria-hidden="true">→</b>
+            <span>Computer performs operations</span>
+          </div>
+          <p>
+            只看程式，還不一定能知道它會處理哪些內容；只看資料，也不知道要如何處理。程式和資料一起工作，才會產生計算結果。
+          </p>
+        </section>
+
+        <section class="lesson-section" id="cpu" aria-labelledby="cpu-title">
+          <p class="lesson-section-number">04 / 執行指令</p>
+          <h2 id="cpu-title">CPU 負責執行指令</h2>
+          <p>
+            當程式要求電腦計算或比較資料時，需要有部件執行這些指令。<strong>中央處理器（CPU）</strong>是負責執行程式指令、處理資料的主要部件。
+          </p>
+          <div class="vertical-flow" aria-label="CPU 執行指令並處理資料">
+            <div class="vertical-flow-node">CPU <small>中央處理器</small></div>
+            <span aria-hidden="true">↓</span>
+            <div class="vertical-flow-node">執行指令</div>
+            <span aria-hidden="true">↓</span>
+            <div class="vertical-flow-node">處理資料</div>
+          </div>
+          <p>
+            CPU 是電腦的重要部件，但不是整台電腦。電腦還需要記憶體存放執行中的資料，需要儲存裝置保存程式和檔案，也需要輸入與輸出設備和人互動。
+          </p>
+        </section>
+
+        <section class="lesson-section" id="memory-storage" aria-labelledby="memory-storage-title">
+          <p class="lesson-section-number">05 / 暫存與保存</p>
+          <h2 id="memory-storage-title">記憶體和儲存裝置有什麼不同？</h2>
+          <p>
+            程式執行時，需要一個地方暫時放正在使用的指令和資料。這個地方通常是<strong>記憶體（Memory）</strong>；一般電腦的主要記憶體是<strong>隨機存取記憶體（RAM，Random Access Memory）</strong>。RAM 供執行中的程式快速讀寫，關機或斷電後，其中的內容通常會消失。因此 RAM 也稱為<strong>揮發性記憶體（volatile memory）</strong>。
+          </p>
+          <p>
+            程式和檔案則需要在關機後仍能保存。負責長期保存資料的裝置稱為<strong>儲存裝置（Storage）</strong>，例如固態硬碟（SSD）或硬碟（HDD）。關機後，存放在 SSD 或 HDD 的檔案通常仍然存在。
+          </p>
+          <p>開啟程式時，程式會從儲存裝置載入記憶體，接著由 CPU 執行其中的指令：</p>
+
+          <div class="computer-demo" id="computer-demo" data-flow-demo>
+            <div class="computer-demo-heading">
+              <div>
+                <h3>開啟程式時，資料如何移動？</h3>
+                <p>執行示意流程，觀察程式從儲存到輸出的步驟。</p>
+              </div>
+              <button
+                class="button button-primary demo-run"
+                id="run-computer-flow"
+                type="button"
+                data-flow-run
+                aria-controls="computer-flow"
+              >
+                執行流程
+                <span class="button-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+
+            <ol class="computer-flow" id="computer-flow" aria-label="程式從儲存裝置載入記憶體，由 CPU 執行並產生輸出">
+              <li class="computer-flow-step" data-flow-step="0" data-flow-label="Storage：程式檔案已保存。">
+                <span class="flow-step-index">01</span>
+                <strong>Storage</strong>
+                <span>儲存裝置</span>
+                <small>保存程式檔案</small>
+              </li>
+              <li class="computer-flow-connector" aria-hidden="true">↓</li>
+              <li class="computer-flow-step" data-flow-step="1" data-flow-label="RAM：程式已載入記憶體。">
+                <span class="flow-step-index">02</span>
+                <strong>RAM</strong>
+                <span>記憶體</span>
+                <small>暫存執行中的程式與資料</small>
+              </li>
+              <li class="computer-flow-connector" aria-hidden="true">↓</li>
+              <li class="computer-flow-step" data-flow-step="2" data-flow-label="CPU：正在執行指令。">
+                <span class="flow-step-index">03</span>
+                <strong>CPU</strong>
+                <span>中央處理器</span>
+                <small>執行指令、處理資料</small>
+              </li>
+              <li class="computer-flow-connector" aria-hidden="true">↓</li>
+              <li class="computer-flow-step" data-flow-step="3" data-flow-label="Output：處理結果已輸出。">
+                <span class="flow-step-index">04</span>
+                <strong>Output</strong>
+                <span>輸出</span>
+                <small>顯示結果或回應操作</small>
+              </li>
+            </ol>
+            <p class="demo-status" id="computer-flow-status" data-flow-status role="status" aria-live="polite">
+              選擇「執行流程」查看各步驟。
+            </p>
+          </div>
+          <p>
+            這個流程呈現程式執行的大方向。實際電腦還會透過<strong>作業系統（Operating System）</strong>管理程式與硬體的協作。作業系統是管理電腦資源、提供程式使用的基本軟體，後續課程會再介紹。
+          </p>
+        </section>
+      </article>
+
+      <section class="lesson-section lesson-quiz" id="quiz" aria-labelledby="quiz-title">
+        <p class="lesson-section-number">06 / 自我檢查</p>
+        <h2 id="quiz-title">小測驗</h2>
+        <p class="quiz-instructions">選擇答案後會立即顯示結果與說明。</p>
+
+        <div
+          class="quiz-question"
+          data-quiz-question
+          data-correct="b"
+          data-correct-explanation="CPU 依照程式指令計算資料，這是處理；鍵盤輸入是輸入，螢幕顯示是輸出。"
+          data-incorrect-explanation="回想輸入、處理、輸出的順序：鍵盤提供資料，電腦依指令運算，螢幕呈現結果。"
+        >
+          <fieldset>
+            <legend>1. 計算小費的程式正在執行。以下哪個步驟屬於「處理」？</legend>
+            <label><input type="radio" name="quiz-1" value="a" /> 使用者在鍵盤輸入金額</label>
+            <label><input type="radio" name="quiz-1" value="b" /> 電腦依照指令計算小費金額</label>
+            <label><input type="radio" name="quiz-1" value="c" /> 螢幕顯示計算結果</label>
+          </fieldset>
+          <p class="quiz-feedback" id="quiz-feedback-1" role="status" aria-live="polite"></p>
+        </div>
+
+        <div
+          class="quiz-question"
+          data-quiz-question
+          data-correct="c"
+          data-correct-explanation="圖片檔案是資料；檢視程式依照圖片格式讀取資料，並把它轉成畫面。"
+          data-incorrect-explanation="電腦儲存和處理的是資料。程式會依照檔案格式解讀資料，並負責顯示圖片。"
+        >
+          <fieldset>
+            <legend>2. 照片檢視程式讀取一個圖片檔案，哪個說法較準確？</legend>
+            <label><input type="radio" name="quiz-2" value="a" /> 電腦直接理解照片拍攝的場景</label>
+            <label><input type="radio" name="quiz-2" value="b" /> CPU 本身就是圖片檔案</label>
+            <label><input type="radio" name="quiz-2" value="c" /> 圖片檔案是資料，程式依照格式讀取並顯示它</label>
+          </fieldset>
+          <p class="quiz-feedback" id="quiz-feedback-2" role="status" aria-live="polite"></p>
+        </div>
+
+        <div
+          class="quiz-question"
+          data-quiz-question
+          data-correct="a"
+          data-correct-explanation="RAM 暫存執行中會用到的程式和資料；SSD 用來保存檔案，關機後資料通常仍在。"
+          data-incorrect-explanation="RAM 是執行時的暫存空間；SSD 是長期保存資料的裝置，CPU 才負責執行指令。"
+        >
+          <fieldset>
+            <legend>3. 你正在使用一個程式，哪一項說明 RAM 和 SSD 的用途最合理？</legend>
+            <label><input type="radio" name="quiz-3" value="a" /> 程式執行時使用 RAM 暫存資料，SSD 可長期保存程式檔案</label>
+            <label><input type="radio" name="quiz-3" value="b" /> RAM 用來永久保存檔案，SSD 負責執行指令</label>
+            <label><input type="radio" name="quiz-3" value="c" /> RAM 和 SSD 都是 CPU 的另一個名稱</label>
+          </fieldset>
+          <p class="quiz-feedback" id="quiz-feedback-3" role="status" aria-live="polite"></p>
+        </div>
+
+        <div
+          class="quiz-question"
+          data-quiz-question
+          data-correct="b"
+          data-correct-explanation="程式先從 Storage 載入 RAM，再由 CPU 執行，最後產生輸出。"
+          data-incorrect-explanation="程式檔案通常先保存在 Storage。開啟時載入 RAM，由 CPU 執行後才會產生輸出。"
+        >
+          <fieldset>
+            <legend>4. 點選程式圖示後，哪個流程最符合本課介紹的執行方式？</legend>
+            <label><input type="radio" name="quiz-4" value="a" /> CPU → Storage → Output → RAM</label>
+            <label><input type="radio" name="quiz-4" value="b" /> Storage → RAM → CPU 執行 → Output</label>
+            <label><input type="radio" name="quiz-4" value="c" /> Output → CPU → RAM → Storage</label>
+          </fieldset>
+          <p class="quiz-feedback" id="quiz-feedback-4" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="lesson-section lesson-security" id="security" aria-labelledby="security-title">
+        <p class="lesson-section-number">07 / 與資安的關係</p>
+        <h2 id="security-title">程式能做什麼，為什麼和資安有關？</h2>
+        <p>
+          程式會使用記憶體、讀取檔案、接收輸入，並執行指令。系統需要決定程式可以存取哪些資料、可以進行哪些操作，也要處理不符合預期的輸入。
+        </p>
+        <p>
+          例如，程式通常不應讀取與工作無關的私人檔案，也不應把使用者輸入直接當成系統命令執行。如何限制程式的存取範圍，以及如何安全處理輸入，都是資訊安全要處理的問題。後續課程會介紹使用者權限、程序（Process，正在執行中的程式）隔離和輸入驗證。
+        </p>
+      </section>
+
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous">
+          <span class="lesson-pagination-label">上一課</span>
+          <p>目前為第一課</p>
+          <a class="back-link" href="computer-fundamentals.html">← 回到 Computer Fundamentals</a>
+        </div>
+        <div class="lesson-next">
+          <span class="lesson-pagination-label">下一課</span>
+          <a class="lesson-next-button" href="cpu.html">
+            下一課：0-2 CPU 在做什麼？ <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" />
+              <path d="M13.25 17.75 16.5 21l6.75-7" />
+            </svg>
+          </span>
+          <span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span>
+        </a>
+        <p>電腦、網路、程式與資訊安全基礎課程。</p>
+        <span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span>
+      </div>
+    </footer>
+  </body>
+</html>

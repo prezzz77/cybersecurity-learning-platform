@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-3 課程：了解 RAM、SSD、HDD 和儲存裝置的差異，以及程式如何載入記憶體後由 CPU 執行。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-3 記憶體與儲存裝置｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-3 記憶體與儲存裝置</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-3</p>
+        <h1 class="lesson-title">記憶體與儲存裝置</h1>
+        <p class="lesson-subtitle">Memory &amp; Storage</p>
+        <p class="lesson-lead">認識程式執行時暫存資料的 RAM，以及長期保存程式和檔案的 SSD、HDD，並追蹤它們如何協同工作。</p>
+      </header>
+
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list">
+          <li>解釋 RAM 和 Storage 在電腦中的不同用途。</li>
+          <li>分辨 SSD 與 HDD 兩種常見儲存裝置。</li>
+          <li>說明程式為何從儲存裝置載入 RAM，再由 CPU 執行。</li>
+        </ul>
+      </section>
+
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="need-storage">
+          <p class="lesson-section-number">01 / 暫存與保存</p>
+          <h2 id="need-storage">電腦為什麼需要兩種存放空間？</h2>
+          <p>使用程式時，電腦需要快速取得目前正在處理的指令和資料；關機後，程式和個人檔案仍應該留在電腦裡。這是兩種不同需求，通常由不同硬體負責。</p>
+          <p><strong>記憶體（Memory）</strong>提供程式執行期間暫時使用的空間。<strong>儲存裝置（Storage）</strong>則負責長期保存程式和檔案。記憶體讓目前工作的內容容易取用；儲存裝置讓資料在關機後仍能保留。</p>
+          <div class="concept-flow" role="img" aria-label="記憶體暫存程式執行中的資料，儲存裝置長期保存程式和檔案">
+            <div class="concept-flow-step"><span>MEMORY</span><strong>暫時使用</strong><small>執行中的程式與資料</small></div>
+            <span class="concept-flow-arrow" aria-hidden="true">↔</span>
+            <div class="concept-flow-step"><span>STORAGE</span><strong>長期保存</strong><small>程式、文件與照片</small></div>
+          </div>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="ram">
+          <p class="lesson-section-number">02 / RAM</p>
+          <h2 id="ram">程式執行時，資料放在哪裡？</h2>
+          <p>程式開始執行時，CPU 需要反覆讀取指令和資料。為了讓這些內容能快速取用，電腦會把目前工作需要的內容放在<strong>隨機存取記憶體（RAM，Random Access Memory）</strong>中。RAM 是程式執行時常用的暫存空間。</p>
+          <p>RAM 的內容通常需要電力維持。電腦關機或斷電後，RAM 裡的內容通常會消失，因此 RAM 也稱為<strong>揮發性記憶體（volatile memory）</strong>。正在編輯但尚未保存的文件，如果電腦突然關機，可能會遺失最近的變更。</p>
+          <p>RAM 讓 CPU 能快速存取目前要用的資料；它不是用來永久保存文件的地方。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="storage-devices">
+          <p class="lesson-section-number">03 / SSD 與 HDD</p>
+          <h2 id="storage-devices">檔案如何在關機後保留下來？</h2>
+          <p>程式、照片和文件需要保存到<strong>儲存裝置（Storage）</strong>，讓它們在關機後仍能留存。桌上型電腦和筆電常見的儲存裝置有 SSD 和 HDD。</p>
+          <div class="comparison-grid">
+            <article class="comparison-card">
+              <p class="comparison-label">SOLID-STATE DRIVE</p>
+              <h3>固態硬碟（SSD）</h3>
+              <p>使用快閃記憶體保存資料，沒有用來讀寫資料的旋轉碟片。常用於系統、程式和個人檔案的長期保存。</p>
+            </article>
+            <article class="comparison-card">
+              <p class="comparison-label">HARD DISK DRIVE</p>
+              <h3>硬碟（HDD）</h3>
+              <p>使用旋轉的磁性碟片保存資料。也是長期儲存裝置，常見於電腦和外接硬碟。</p>
+            </article>
+          </div>
+          <p>兩者都能在關機後保存資料，但記錄資料的硬體方式不同。這裡重要的區別是：SSD 和 HDD 屬於 Storage，RAM 則是執行期間使用的記憶體。</p>
+        </section>
+
+        <section class="lesson-section" aria-labelledby="why-not-ssd">
+          <p class="lesson-section-number">04 / 為什麼需要載入 RAM</p>
+          <h2 id="why-not-ssd">為什麼程式不一直待在 SSD 裡執行？</h2>
+          <p>SSD 和 HDD 適合保存大量資料，但 CPU 執行程式時，會頻繁讀取指令和資料。若每次處理都要直接向儲存裝置取得所需內容，通常會比使用 RAM 慢，程式回應也會變慢。</p>
+          <p>因此，作業系統會在啟動程式時，把執行需要的程式內容和資料載入 RAM。CPU 再從 RAM 取得指令和資料並執行。RAM 的空間有限；程式結束後，暫存空間可讓其他工作使用，而原本的程式檔案仍保存在 SSD 或 HDD。</p>
+          <aside class="lesson-note"><strong>兩種空間，兩種工作</strong><p>可以把這個差異理解為「目前工作使用的空間」和「關機後仍保存的空間」。對應到電腦裡，前者通常是 RAM，後者是 SSD 或 HDD；實際裝置還有其他細節，本課先看這個基本流程。</p></aside>
+        </section>
+      </article>
+
+      <section class="lesson-section" aria-labelledby="memory-demo-title">
+        <p class="lesson-section-number">05 / 互動示意</p>
+        <h2 id="memory-demo-title">程式如何從 Storage 到 CPU？</h2>
+        <p>選擇 Storage、RAM 或 CPU 查看各自的工作，也可以按「播放流程」依序檢視。</p>
+        <div class="computer-demo" data-flow-demo>
+          <div class="computer-demo-heading"><div><h3>程式載入與執行</h3><p>Storage → RAM → CPU → 執行</p></div><button class="button button-primary demo-run" type="button" data-flow-run aria-controls="memory-flow">播放流程 <span class="button-arrow" aria-hidden="true">→</span></button></div>
+          <ol class="computer-flow computer-flow-selectable" id="memory-flow" aria-label="可選取 Storage、RAM 或 CPU 了解程式的載入與執行">
+            <li><button class="computer-flow-step" type="button" data-flow-step data-flow-select data-flow-label="Storage：程式檔案和長期保存的資料留在 SSD 或 HDD，關機後通常仍保留。" aria-pressed="false"><span class="flow-step-index">01</span><strong>Storage</strong><span>SSD / HDD</span><small>保存程式檔案</small></button></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li><button class="computer-flow-step" type="button" data-flow-step data-flow-select data-flow-label="RAM：作業系統把執行需要的程式指令和資料載入記憶體，供目前的工作使用。" aria-pressed="false"><span class="flow-step-index">02</span><strong>RAM</strong><span>記憶體</span><small>暫存執行中的指令和資料</small></button></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li><button class="computer-flow-step" type="button" data-flow-step data-flow-select data-flow-label="CPU：中央處理器從 RAM 取得目前要執行的指令和資料，依照指令執行操作。" aria-pressed="false"><span class="flow-step-index">03</span><strong>CPU</strong><span>中央處理器</span><small>執行指令、處理資料</small></button></li>
+            <li class="computer-flow-connector" aria-hidden="true">↓</li>
+            <li class="computer-flow-step" data-flow-step data-flow-label="執行：CPU 完成指令指定的操作，程式再使用結果或將結果保存。"><span class="flow-step-index">04</span><strong>執行</strong><span>處理資料</span><small>結果交由程式使用或保存</small></li>
+          </ol>
+          <p class="demo-status" data-flow-status role="status" aria-live="polite">選擇一個步驟，或播放完整流程。</p>
+        </div>
+      </section>
+
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title">
+        <p class="lesson-section-number">06 / 自我檢查</p><h2 id="quiz-title">小測驗</h2><p class="quiz-instructions">選擇答案後會立即顯示結果與說明。</p>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="程式正在執行時，RAM 暫存 CPU 目前需要的指令和資料。" data-incorrect-explanation="SSD 可以保存程式檔案，但程式執行時會把目前需要的指令和資料載入 RAM。"><fieldset><legend>1. 瀏覽器正在開啟網頁，CPU 通常會從哪裡取得目前要處理的資料？</legend><label><input type="radio" name="memory-quiz-1" value="a" /> 螢幕</label><label><input type="radio" name="memory-quiz-1" value="b" /> RAM</label><label><input type="radio" name="memory-quiz-1" value="c" /> 鍵盤</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="c" data-correct-explanation="SSD 和 HDD 都是長期保存程式及檔案的儲存裝置，關機後資料通常仍在。" data-incorrect-explanation="程式執行時暫存資料的是 RAM；要在關機後保存檔案，通常使用 SSD 或 HDD。"><fieldset><legend>2. 哪一種配置能在關機後保留照片檔案？</legend><label><input type="radio" name="memory-quiz-2" value="a" /> 只存放在 RAM</label><label><input type="radio" name="memory-quiz-2" value="b" /> 只放在 CPU 中</label><label><input type="radio" name="memory-quiz-2" value="c" /> 保存到 SSD 或 HDD</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="一般流程會先把程式和執行所需資料從儲存裝置載入 RAM，再由 CPU 執行。" data-incorrect-explanation="儲存裝置負責保存程式，RAM 提供執行中的暫存空間，CPU 負責執行指令。"><fieldset><legend>3. 開啟一個程式時，哪個流程較符合本課介紹的基本方式？</legend><label><input type="radio" name="memory-quiz-3" value="a" /> Storage → RAM → CPU</label><label><input type="radio" name="memory-quiz-3" value="b" /> RAM → Storage → 螢幕</label><label><input type="radio" name="memory-quiz-3" value="c" /> CPU → SSD → RAM</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="RAM 適合快速暫存目前執行需要的內容；SSD 和 HDD 負責長期保存檔案。" data-incorrect-explanation="RAM 和 Storage 服務不同需求：RAM 供執行期間使用，SSD/HDD 在電腦關機後保存資料。"><fieldset><legend>4. 為什麼電腦同時需要 RAM 和 SSD 或 HDD？</legend><label><input type="radio" name="memory-quiz-4" value="a" /> 兩者都只用來執行 CPU 指令</label><label><input type="radio" name="memory-quiz-4" value="b" /> RAM 暫存執行內容，Storage 長期保存檔案</label><label><input type="radio" name="memory-quiz-4" value="c" /> SSD 和 HDD 是 RAM 的兩種名稱</label></fieldset><p class="quiz-feedback" role="status" aria-live="polite"></p></div>
+      </section>
+
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">07 / 與資安的關係</p><h2 id="security-title">記憶體和儲存裝置也涉及資料保護</h2>
+        <p>程式執行時，RAM 可能暫存密碼、文件內容或其他敏感資料。程式若錯誤地讀取不屬於自己的記憶體，可能造成<strong>記憶體安全（memory safety）</strong>問題；本課只建立這個概念，之後再學其成因與防護。</p>
+        <p>SSD 或 HDD 會保存使用者檔案。刪除檔案不一定代表資料立即從裝置上不可復原，因此敏感資料如何保存、刪除與避免外洩，都需要謹慎處理。實際安全刪除方式會依裝置和系統而不同。</p>
+      </section>
+
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2><p>RAM 暫存執行中的程式與資料；SSD、HDD 等 Storage 長期保存檔案。程式通常由 Storage 載入 RAM，再由 CPU 執行。</p>
+        <h3>下一步</h3><p>0-4 會說明程式指令和資料如何配合工作，也會介紹程式本身為何也能被當成資料。</p>
+      </section>
+
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="cpu.html">← 0-2 CPU 在做什麼？</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="program-data.html">0-4 程式與資料 <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>

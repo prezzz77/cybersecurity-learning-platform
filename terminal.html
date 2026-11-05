@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="0-8 課程：了解 Terminal、Shell、Command Line 與目前路徑，並在安全的模擬器中練習基本命令。" />
+    <meta name="theme-color" content="#0a111d" />
+    <title>0-8 Terminal 與 Command Line｜資訊安全教育平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="index.html" aria-label="資訊安全教育平台首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="開啟導覽選單"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="主要導覽"><a class="nav-link" href="index.html">首頁</a><a class="nav-link active" href="roadmap.html">學習路線</a><a class="nav-cta" href="computer-fundamentals.html">課程列表 <span aria-hidden="true">→</span></a></nav>
+    </div></header>
+    <main class="lesson-page section-shell" id="main-content">
+      <nav class="breadcrumbs" aria-label="麵包屑導覽"><a href="index.html">首頁</a><span aria-hidden="true">/</span><a href="roadmap.html">學習路線</a><span aria-hidden="true">/</span><a href="computer-fundamentals.html">Computer Fundamentals</a><span aria-hidden="true">/</span><span aria-current="page">0-8 Terminal 與 Command Line</span></nav>
+      <header class="lesson-header">
+        <p class="section-kicker">LEVEL 0 <span>—</span> LESSON 0-8</p>
+        <h1 class="lesson-title">Terminal 與 Command Line</h1>
+        <p class="lesson-subtitle">Terminal &amp; Command Line</p>
+        <p class="lesson-lead">認識文字介面如何接收命令、要求作業系統操作檔案，並回傳結果。本課的命令練習只在模擬器中執行。</p>
+      </header>
+      <section class="lesson-section learning-objectives" aria-labelledby="objectives-title">
+        <h2 id="objectives-title">學完這一課，你可以</h2>
+        <ul class="objective-list"><li>分辨 Terminal、Shell 與 Command Line。</li><li>說明命令如何透過 Shell 要求作業系統執行操作。</li><li>使用目前位置與路徑理解 pwd、ls 和 cd 的結果。</li></ul>
+      </section>
+      <article class="lesson-content">
+        <section class="lesson-section" aria-labelledby="terminal-definition">
+          <p class="lesson-section-number">01 / Terminal</p>
+          <h2 id="terminal-definition">用文字與電腦互動的介面</h2>
+          <p><strong>終端機（Terminal）</strong>是讓使用者以文字輸入和查看結果的介面。它不是作業系統，也不是命令本身；它提供一個地方，讓使用者透過文字方式與系統互動。</p>
+          <p>終端機裡常會執行<strong>Shell（命令解譯程式）</strong>。Shell 是一種接收使用者命令、解析命令並要求作業系統執行操作的程式。使用者輸入的命令和 Shell 提供的文字互動方式，合稱<strong>命令列介面（Command Line Interface，CLI）</strong>。</p>
+          <div class="concept-flow concept-flow-four-step" role="img" aria-label="使用者在 Terminal 輸入命令，Shell 解析命令並要求作業系統執行操作">
+            <div class="concept-flow-step"><span>USER</span><strong>使用者</strong><small>輸入命令</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>TERMINAL</span><strong>Terminal</strong><small>文字輸入與結果顯示介面</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>SHELL / CLI</span><strong>Shell</strong><small>解析命令、提出操作要求</small></div><span class="concept-flow-arrow" aria-hidden="true">→</span>
+            <div class="concept-flow-step"><span>OS</span><strong>作業系統</strong><small>處理檔案或其他操作</small></div>
+          </div>
+          <p>Terminal 提供文字互動視窗；Shell 解讀命令並提出要求；作業系統負責依照規則處理資源。三者有關聯，但不是同一個東西。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="command">
+          <p class="lesson-section-number">02 / Command</p>
+          <h2 id="command">命令如何得到結果？</h2>
+          <p><strong>命令（command）</strong>是使用者輸入、要求系統完成特定操作的文字。例如 <code>pwd</code> 要求顯示目前所在資料夾，<code>ls</code> 要求列出目前位置的內容，<code>cd</code> 則要求切換目前位置。</p>
+          <ul class="objective-list">
+            <li>輸入 <code>pwd</code>：要求顯示目前位置；結果是資料夾路徑。</li>
+            <li>輸入 <code>ls</code>：要求列出目前資料夾內容；結果是其中的檔案和資料夾名稱。</li>
+            <li>輸入 <code>cd project</code>：要求切換至 project 資料夾；成功後目前位置會改變。</li>
+          </ul>
+          <p>Shell 會解析命令文字，再請作業系統完成相應操作。作業系統回傳結果後，Terminal 顯示出來。這些簡單命令和 0-6 學過的路徑、資料夾直接相關。</p>
+        </section>
+        <section class="lesson-section" aria-labelledby="current-location">
+          <p class="lesson-section-number">03 / 目前位置與路徑</p>
+          <h2 id="current-location">相對路徑從目前位置開始</h2>
+          <p>在命令列中，<strong>目前位置（current working directory）</strong>是命令預設操作的資料夾。<code>pwd</code> 顯示目前位置；<code>ls</code> 列出該位置的檔案和資料夾；<code>cd</code> 改變目前位置。</p>
+          <p>目前位置會影響相對路徑的意思。例如目前位於 <code>project/</code>，相對路徑 <code>css/style.css</code> 指向 project 裡 css 資料夾的檔案。絕對路徑則從檔案系統根目錄描述完整位置，不依賴目前位置。</p>
+          <aside class="lesson-note"><strong>和檔案系統的關係</strong><p>命令列不會改變檔案如何組織。Shell 使用路徑表達操作目標，作業系統依據檔案系統找到對應的資料夾或檔案。</p></aside>
+        </section>
+      </article>
+      <section class="lesson-section" aria-labelledby="terminal-demo-title">
+        <p class="lesson-section-number">04 / 互動示意</p>
+        <h2 id="terminal-demo-title">在模擬 Terminal 中執行命令</h2>
+        <p>可輸入 <code>pwd</code>、<code>ls</code>、<code>cd project</code>、<code>cd ..</code>、<code>help</code> 或 <code>clear</code>。模擬器只處理這些預先定義的命令，不會執行系統 Shell 或其他命令。</p>
+        <div class="terminal-demo" data-terminal-demo>
+          <div class="terminal-demo-heading"><span>模擬器 · 僅處理指定命令</span><span class="terminal-location">目前位置：<code data-terminal-location>/home/learner</code></span></div>
+          <div class="terminal-output" data-terminal-output role="log" aria-live="polite" aria-label="模擬 Terminal 的命令與結果">
+            <p>輸入 help 查看可用命令。此為模擬環境，沒有連接本機檔案或命令列。</p>
+          </div>
+          <form class="terminal-form" data-terminal-form>
+            <label for="terminal-command"><span data-terminal-prompt>/home/learner</span> $</label>
+            <input id="terminal-command" data-terminal-input type="text" autocomplete="off" spellcheck="false" aria-label="輸入模擬 Terminal 命令" />
+            <button type="submit" class="button button-primary">執行</button>
+          </form>
+          <p class="demo-status" data-terminal-status role="status" aria-live="polite">命令會由模擬 Shell 判讀，再顯示預先定義的結果。</p>
+        </div>
+      </section>
+      <section class="lesson-section lesson-quiz" aria-labelledby="quiz-title" data-confirm-quiz>
+        <p class="lesson-section-number">05 / 自我檢查</p><h2 id="quiz-title">小測驗</h2><p class="quiz-instructions">共 3 題。每題選擇答案後按「確認答案」查看解析；尚未選擇時不會判定。</p>
+        <p class="quiz-score" data-quiz-score aria-live="polite">得分：0 / 3</p>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="Terminal 提供文字互動介面，讓使用者透過文字與系統互動。Terminal ≠ Operating System；作業系統負責管理資源，Terminal 是其中一種互動介面。"><fieldset><legend>1. Terminal 的主要用途是什麼？</legend><label><input type="radio" name="terminal-quiz-1" value="a" /> 提供文字介面讓使用者與系統互動</label><label><input type="radio" name="terminal-quiz-1" value="b" data-option-explanation="Terminal 不是作業系統；它只是使用者與系統互動的一種文字介面。" /> Terminal 本身就是作業系統</label><label><input type="radio" name="terminal-quiz-1" value="c" data-option-explanation="CPU 是執行指令的硬體，Terminal 則提供文字輸入和結果顯示介面。" /> Terminal 本身就是 CPU</label><label><input type="radio" name="terminal-quiz-1" value="d" data-option-explanation="檔案會由檔案系統和儲存裝置管理；Terminal 的主要用途是提供文字互動介面。" /> Terminal 只負責儲存檔案</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="terminal-feedback-1">確認答案</button><p class="quiz-feedback" id="terminal-feedback-1" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="b" data-correct-explanation="Shell 先處理使用者輸入的 ls，要求作業系統列出目前資料夾內容，再把結果交回 Terminal 顯示。Command 不是直接對 CPU 下命令。"><fieldset><legend>2. 使用者在 Terminal 中輸入 <code>ls</code> 後，最合理的概念流程是哪一個？</legend><label><input type="radio" name="terminal-quiz-2" value="a" data-option-explanation="Command 不會直接對 CPU 下命令。Shell 解析輸入後，會要求作業系統進行相應操作。" /> 使用者輸入 → CPU 直接執行 → Terminal 猜測結果</label><label><input type="radio" name="terminal-quiz-2" value="b" /> 使用者輸入命令 → Shell 處理 → 要求系統操作 → 得到結果 → 顯示結果</label><label><input type="radio" name="terminal-quiz-2" value="c" data-option-explanation="Shell 會先處理命令並要求作業系統操作，之後才有結果可供 Terminal 顯示。" /> Terminal 顯示結果 → 系統才收到命令 → Shell 判讀</label><label><input type="radio" name="terminal-quiz-2" value="d" data-option-explanation="ls 要求列出目前資料夾內容，不會改變目前位置；切換位置使用 cd。" /> 使用者輸入命令 → 檔案系統自動切換位置 → CPU 顯示命令文字</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="terminal-feedback-2">確認答案</button><p class="quiz-feedback" id="terminal-feedback-2" role="status" aria-live="polite"></p></div>
+        <div class="quiz-question" data-quiz-question data-correct="a" data-correct-explanation="相對路徑以目前位置 project/ 為起點，進入 css 資料夾後找到 style.css。這和 0-6 學過的路徑定位方式相同。"><fieldset><legend>3. 目前位於 <code>project/</code>，要找到 <code>style.css</code>，哪一個相對路徑正確？</legend><label><input type="radio" name="terminal-quiz-3" value="a" /> css/style.css</label><label><input type="radio" name="terminal-quiz-3" value="b" data-option-explanation="目前位置已經是 project/，style.css 會指向 project 根目錄中的檔案，不是 css 子資料夾裡的檔案。" /> style.css</label><label><input type="radio" name="terminal-quiz-3" value="c" data-option-explanation="images/style.css 會到 images 資料夾尋找檔案，但範例中的 style.css 位於 css 資料夾。" /> images/style.css</label><label><input type="radio" name="terminal-quiz-3" value="d" data-option-explanation="../style.css 會往 project 的上一層找檔案，沒有進入 project/css 資料夾。" /> ../style.css</label></fieldset><button type="button" class="quiz-confirm" data-quiz-confirm aria-controls="terminal-feedback-3">確認答案</button><p class="quiz-feedback" id="terminal-feedback-3" role="status" aria-live="polite"></p></div>
+      </section>
+      <section class="lesson-section lesson-security" aria-labelledby="security-title">
+        <p class="lesson-section-number">06 / 與資安的關係</p><h2 id="security-title">命令會以目前使用者的權限執行</h2>
+        <p>Terminal 中輸入的命令可能要求系統讀寫檔案或啟動程式。命令能做什麼，會受到目前使用者權限和作業系統檢查的影響；因此只應執行理解且可信任的命令。</p>
+        <p>程式若把使用者提供的文字直接當成命令交給系統執行，資料可能被誤當成操作，這類問題稱為<strong>命令注入（Command Injection）</strong>。本課只介紹這個風險概念，不提供攻擊命令或實際利用方式。</p>
+      </section>
+      <section class="lesson-section lesson-takeaways" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title">你已經知道</h2><p>Terminal 是文字互動介面，Shell 解析命令並要求作業系統操作資源。pwd、ls、cd 分別查看位置、列出內容和切換資料夾；目前位置會影響相對路徑。</p>
+        <h3>下一步</h3><p>0-9 會整理作業系統如何管理 CPU、Process、記憶體、檔案、使用者和權限。</p>
+      </section>
+      <nav class="lesson-pagination" aria-label="課程導覽">
+        <div class="lesson-previous"><span class="lesson-pagination-label">上一課</span><a class="back-link" href="user-permission.html">← 0-7 使用者與權限</a></div>
+        <a class="back-link" href="computer-fundamentals.html">回到課程列表</a>
+        <div class="lesson-next"><span class="lesson-pagination-label">下一課</span><a class="lesson-next-button" href="operating-system.html">0-9 作業系統 <span aria-hidden="true">→</span></a></div>
+      </nav>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" href="index.html" aria-label="資訊安全教育平台，回到首頁"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3.75 30 9v8.25c0 7.08-4.8 12.06-12 15-7.2-2.94-12-7.92-12-15V9l12-5.25Z" /><path d="M13.25 17.75 16.5 21l6.75-7" /></svg></span><span class="brand-copy"><span class="brand-name">資訊安全教育平台</span><span class="brand-subtitle">CYBERSECURITY EDUCATION</span></span></a><p>電腦、網路、程式與資訊安全基礎課程。</p><span class="footer-copyright">© <span id="current-year">2026</span> CYBERSECURITY EDUCATION</span></div></footer>
+  </body>
+</html>
